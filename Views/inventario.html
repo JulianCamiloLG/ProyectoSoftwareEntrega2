@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../Boostrap/css/bootstrap.min.css">
+    <link rel="icon" href="../Imagenes/Favicon.ico">
+    <link rel="stylesheet" href="../Css/estilos.css">
+    <title>Inventario</title>
+</head>
+<body class="body">
+    <header class="jumbotron">
+	    <div class="container">
+		    <img src="../Imagenes/banner.png" height="100%" width="100%" title="EasyAdmin" alt="EasyAdmin">
+        </div>
+    </header>
+    <nav></nav>
+    <div class="container">
+        <section>
+            <div class="table-responsive">
+                <table class="Tabla-inventario table table-bordered table-hover table-condensed" id="Tabla-inventario">
+                    <tr class="info">
+                          <h1>
+                             <p class="Inventario">
+                                 INVENTARIO DIARIO SAN JUANITAS EMPANADAS CENTRO
+                             </p>
+                          </h1>                   
+                    </tr>
+                    <tr class="success">
+                        <th>MES:</th>
+                        <td><input type="text" placeholder="Mes" class="txtMesCentro" id="txtMesCentro"></td>
+                        <th>DIA:</th>
+                        <td><input type="text" placeholder="Dia" class="txtDiaCentro" id="txtDiaCentro"></td>
+                    </tr>
+                    <tr class="success">
+                        <th>Nombre del cajero:</th>
+                        <td><input type="text" placeholder="Nombre del cajero" class="txtCajeroCentro" id="txtCajeroCentro"></td>
+                    </tr>
+                    <tr class="active">
+                       <th>Producto</th>
+                       <th>Inicio</th>
+                       <th>Entra</th>
+                       <th>Devol.</th>
+                       <th>Total</th>
+                       <th>Saldo</th>
+                       <th>Venta</th>
+                    </tr>
+                    <tr class="warning">
+                        <td>Empa. Carne</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioECarneCentro" id="txtInicioECarneCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraECarneCentro" id="txtEntraECarneCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolECarneCentro" id="txtDevolECarneCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalECarneCentro" id="txtTotalECarneCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoECarneCentro" id="txtSaldoECarneCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaECarneCentro" id="txtVentaECarneCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Empa. Pollo</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioEPolloCentro" id="txtInicioEPolloCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraEPolloCentro" id="txtEntraEPolloCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolEPolloCentro" id="txtDevolEPolloCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalEPolloCentro" id="txtTotalEPolloCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoEPolloCentro" id="txtSaldoEPolloCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaEPolloCentro" id="txtVentaEPolloCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Empa. Chicharrón</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioEChicharronCentro" id="txtInicioEChicharronCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraEChicharronCentro" id="txtEntraEChicharronCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolEChicharronCentro" id="txtDevolEChicharronCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalEChicharronCentro" id="txtTotalEChicharronCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoEChicharronCentro" id="txtSaldoEChicharronCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaEChicharronCentro" id="txtVentaEChicharronCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Empa. Queso</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioEQuesoCentro" id="txtInicioEQuesoCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraEQuesoCentro" id="txtEntraEQuesoCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolEQuesoCentro" id="txtDevolEQuesoCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalEQuesoCentro" id="txtTotalEQuesoCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoEQuesoCentro" id="txtSaldoEQuesoCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaEQuesoCentro" id="txtVentaEQuesoCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Empa. Champiñones</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioEChmpinonesCentro" id="txtInicioEChmpinonesCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraEChmpinonesCentro" id="txtEntraEChmpinonesCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolEChmpinonesCentro" id="txtDevolEChmpinonesCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalEChmpinonesCentro" id="txtTotalEChmpinonesCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoEChmpinonesCentro" id="txtSaldoEChmpinonesCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaEChmpinonesCentro" id="txtVentaEChmpinonesCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Gaseosa 250</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioGaseosa250Centro" id="txtInicioGaseosa250Centro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraGaseosa250Centro" id="txtEntraGaseosa250Centro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolGaseosa250Centro" id="txtDevolGaseosa250Centro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalGaseosa250Centro" id="txtTotalGaseosa250Centro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoGaseosa250Centro" id="txtSaldoGaseosa250Centro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaGaseosa250Centro" id="txtVentaGaseosa250Centro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Gaseosa 350</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioGaseosa350Centro" id="txtInicioGaseosa350Centro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraGaseosa350Centro" id="txtEntraGaseosa350Centro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolGaseosa350Centro" id="txtDevolGaseosa350Centro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalGaseosa350Centro" id="txtTotalGaseosa350Centro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoGaseosa350Centro" id="txtSaldoGaseosa350Centro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaGaseosa350Centro" id="txtVentaGaseosa350Centro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Jugo hit 250</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioJugoHit250Centro" id="txtInicioJugoHit250Centro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraJugoHit250Centro" id="txtEntraJugoHit250Centro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolJugoHit250Centro" id="txtDevolJugoHit250Centro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalJugoHit250Centro" id="txtTotalJugoHit250Centro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoJugoHit250Centro" id="txtSaldoJugoHit250Centro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaJugoHit250Centro" id="txtVentaJugoHit250Centro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Jugo hit 500</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioJugoHit500Centro" id="txtInicioJugoHit500Centro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraJugoHit500Centro" id="txtEntraJugoHit500Centro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolJugoHit500Centro" id="txtDevolJugoHit500Centro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalJugoHit500Centro" id="txtTotalJugoHit500Centro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoJugoHit500Centro" id="txtSaldoJugoHit500Centro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaJugoHit500Centro" id="txtVentaJugoHit500Centro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>H20</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioH2OCentro" id="txtInicioH2OCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraH2OCentro" id="txtEntraH2OCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolH2OCentro" id="txtDevolH2OCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalH2OCentro" id="txtTotalH2OCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoH2OCentro" id="txtSaldoH2OCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaH2OCentro" id="txtVentaH2OCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Gaseosa 2 Lt.</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioGaseosa2LTCentro" id="txtInicioGaseosa2LTCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraGaseosa2LTCentro" id="txtEntraGaseosa2LTCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolGaseosa2LTCentro" id="txtDevolGaseosa2LTCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalGaseosa2LTCentro" id="txtTotalGaseosa2LTCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoGaseosa2LTCentro" id="txtSaldoGaseosa2LTCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaGaseosa2LTCentro" id="txtVentaGaseosa2LTCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Fuze tea</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioFuzeteaCentro" id="txtInicioFuzeteaCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraFuzeteaCentro" id="txtEntraFuzeteaCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolFuzeteaCentro" id="txtDevolFuzeteaCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalFuzeteaCentro" id="txtTotalFuzeteaCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoFuzeteaCentro" id="txtSaldoFuzeteaCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaFuzeteaCentro" id="txtVentaFuzeteaCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Flexi pequeña</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioFlexipequenaCentro" id="txtInicioFlexipequenaCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraFlexipequenaCentro" id="txtEntraFlexipequenaCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolFlexipequenaCentro" id="txtDevolFlexipequenaCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalFlexipequenaCentro" id="txtTotalFlexipequenaCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoFlexipequenaCentro" id="txtSaldoFlexipequenaCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaFlexipequenaCentro" id="txtVentaFlexipequenaCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Pony pet</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioPonypetCentro" id="txtInicioPonypetCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraPonypetCentro" id="txtEntraPonypetCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolPonypetCentro" id="txtDevolPonypetCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalPonypetCentro" id="txtTotalPonypetCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoPonypetCentro" id="txtSaldoPonypetCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaPonypetCentro" id="txtVentaPonypetCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Pony mini</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioPonyminiCentro" id="txtInicioPonyminiCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraPonyminiCentro" id="txtEntraPonyminiCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolPonyminiCentro" id="txtDevolPonyminiCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalPonyminiCentro" id="txtTotalPonyminiCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoPonyminiCentro" id="txtSaldoPonyminiCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaPonyminiCentro" id="txtVentaPonyminiCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Agua</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioAguaCentro" id="txtInicioAguaCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraAguaCentro" id="txtEntraAguaCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolAguaCentro" id="txtDevolAguaCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalAguaCentro" id="txtTotalAguaCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoAguaCentro" id="txtSaldoAguaCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaAguaCentro" id="txtVentaAguaCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Chiclets</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioChicletsCentro" id="txtInicioChicletsCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraChicletsCentro" id="txtEntraChicletsCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolChicletsCentro" id="txtDevolChicletsCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalChicletsCentro" id="txtTotalChicletsCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoChicletsCentro" id="txtSaldoChicletsCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaChicletsCentro" id="txtVentaChicletsCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Leche</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioLecheCentro" id="txtInicioLecheCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraLecheCentro" id="txtEntraLecheCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolLecheCentro" id="txtDevolLecheCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalLecheCentro" id="txtTotalLecheCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoLecheCentro" id="txtSaldoLecheCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaLecheCentro" id="txtVentaLecheCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Pulpas</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioPulpasCentro" id="txtInicioPulpasCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraPulpasCentro" id="txtEntraPulpasCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolPulpasCentro" id="txtDevolPulpasCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalPulpasCentro" id="txtTotalPulpasCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoPulpasCentro" id="txtSaldoPulpasCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaPulpasCentro" id="txtVentaPulpasCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Avena</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioAvenaCentro" id="txtInicioAvenaCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraAvenaCentro" id="txtEntraAvenaCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolAvenaCentro" id="txtDevolAvenaCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalAvenaCentro" id="txtTotalAvenaCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoAvenaCentro" id="txtSaldoAvenaCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaAvenaCentro" id="txtVentaAvenaCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Milo caliente</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioMilocalienteCentro" id="txtInicioMilocalienteCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraMilocalienteCentro" id="txtEntraMilocalienteCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolMilocalienteCentro" id="txtDevolMilocalienteCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalMilocalienteCentro" id="txtTotalMilocalienteCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoMilocalienteCentro" id="txtSaldoMilocalienteCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaMilocalienteCentro" id="txtVentaMilocalienteCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Pintado</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioPintadoCentro" id="txtInicioPintadoCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraPintadoCentro" id="txtEntraPintadoCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolPintadoCentro" id="txtDevolPintadoCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalPintadoCentro" id="txtTotalPintadoCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoPintadoCentro" id="txtSaldoPintadoCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaPintadoCentro" id="txtVentaPintadoCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Pintadito</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioPintaditoCentro" id="txtInicioPintadoCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraPintaditoCentro" id="txtEntraPintaditoCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolPintaditoCentro" id="txtDevolPintaditoCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalPintaditoCentro" id="txtTotalPintaditoCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoPintaditoCentro" id="txtSaldoPintaditoCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaPintaditoCentro" id="txtVentaPintaditoCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Capuccino original</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioCapuccinooriginalCentro" id="txtInicioCapuccinooriginalCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraCapuccinooriginalCentro" id="txtEntraCapuccinooriginalCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolCapuccinooriginalCentro" id="txtDevolCapuccinooriginalCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalCapuccinooriginalCentro" id="txtTotalCapuccinooriginalCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoCapuccinooriginalCentro" id="txtSaldoCapuccinooriginalCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaCapuccinooriginalCentro" id="txtVentaCapuccinooriginalCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Capuccino Vainilla</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioCapuccinoVainillaCentro" id="txtInicioCapuccinoVainillaCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraCapuccinoVainillaCentro" id="txtEntraCapuccinoVainillaCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolCapuccinoVainillaCentro" id="txtDevolCapuccinoVainillaCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalCapuccinoVainillaCentro" id="txtTotalCapuccinoVainillaCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoCapuccinoVainillaCentro" id="txtSaldoCapuccinoVainillaCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaCapuccinoVainillaCentro" id="txtVentaCapuccinoVainillaCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Tinto</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioTintoCentro" id="txtInicioTintoCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraTintoCentro" id="txtEntraTintoCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolTintoCentro" id="txtDevolTintoCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalTintoCentro" id="txtTotalTintoCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoTintoCentro" id="txtSaldoTintoCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaTintoCentro" id="txtVentaTintoCentro"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Mokaccino</td>
+                        <td><input type="text" placeholder="Inicio" class="txtInicioMokaccinoCentro" id="txtInicioMokaccinoCentro"></td>
+                        <td><input type="text" placeholder="Entra" class="txtEntraMokaccinoCentro" id="txtEntraMokaccinoCentro"></td>
+                        <td><input type="text" placeholder="Devol." class="txtDevolMokaccinoCentro" id="txtDevolMokaccinoCentro"></td>
+                        <td><input type="text" placeholder="Total" class="txtTotalMokaccinoCentro" id="txtTotalMokaccinoCentro"></td>
+                        <td><input type="text" placeholder="Saldo" class="txtSaldoMokaccinoCentro" id="txtSaldoMokaccinoCentro"></td>
+                        <td><input type="text" placeholder="Venta" class="txtVentaMokaccinoCentro" id="txtVentaMokaccinoCentro"></td>
+                    </tr>
+                    <tr>
+                         <td>
+                          <h1>
+                             <p class="Inventario">
+                                 GASTOS
+                             </p>
+                          </h1> 
+                          </td>                  
+                    </tr>
+                    <tr class="active">
+                       <th>DESCRIPCIÓN</th>
+                       <th>VALOR</th>
+                       <th>DESCRIPCIÓN</th>
+                       <th>VALOR</th>
+                       <th>DESCRIPCIÓN</th>
+                       <th>VALOR</th>
+                       <th><button id="btnNuevoDV" class="btnNuevoDV btn btn-primary">+</button></th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder="Descripción" class="txtDescripcionGastosCentro" id="txtDescripcionGastosCentro"></td>
+                        <td><input type="text" placeholder="valor" class="txtValorGastosCentro" id="txtValorGastosCentro"></td>
+                        <td><input type="text" placeholder="Descripción" class="txtDescripcionGastosCentro" id="txtDescripcionGastosCentro"></td>
+                        <td><input type="text" placeholder="valor" class="txtValorGastosCentro" id="txtValorGastosCentro"></td>
+                        <td><input type="text" placeholder="Descripción" class="txtDescripcionGastosCentro" id="txtDescripcionGastosCentro"></td>
+                        <td><input type="text" placeholder="valor" class="txtValorGastosCentro" id="txtValorGastosCentro"></td>
+                    </tr>
+                     <tr class="success">
+                        <th>TOTAL GASTOS</th>
+                        <td><input type="text" placeholder="Gastos" class="txtTotalGastosCentro" id="txtTotalGastosCentro"></td>
+                    </tr>
+                    <tr class="success">
+                        <th>OBSERVACIONES</th>
+                        <td>
+                        <textarea name="txtObservacionesInventario" class="txtObservacionesInventarioCentro" id="txtObservacionesInventarioCentro" placeholder="Observaciones..."></textarea></td>
+                    </tr>
+                </table> 
+                <div class="form-bottom">
+                    <button type="button" class="btn-block btn-danger btn-lg">Guardar <span class="glyphicon glyphicon-floppy-saved"></span> </button>
+                </div>             
+          </div>
+       </section>
+    </div> 
+    <script src="../Jquery/jquery-1.11.1.min.js" ></script>   
+    <script src="../Boostrap/js/bootstrap.min.js"></script>    
+    <script src="../Js/JS_Inventario.js" type="text/javascript" language="javascript1.5"></script>
+</body>
+</html>

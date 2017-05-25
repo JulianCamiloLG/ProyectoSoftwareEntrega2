@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../Boostrap/css/bootstrap.min.css">
+    <link rel="icon" href="../Imagenes/Favicon.ico">
+    <link rel="stylesheet" href="../Css/estilos.css">
+    <link rel="stylesheet" href="../Boostrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../Css/estilos.css">
+    <script src="../Jquery/jquery-1.11.1.min.js" ></script>
+    <script src="../Boostrap/js/bootstrap.min.js"></script>
+    <script src="../Js/CU-Cuadre_Caja.js" type="text/javascript" language="javascript1.5"></script>
+    <title>Cuadre de caja</title>
+</head>
+    <body class="body">
+		<div class="container">
+			<form role="form" action="" method="post" class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-xs-8 extra">DATOS DE CUADRE</label>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3">Seleccionar Sede:</label>
+					<div class="col-xs-9">
+						<select class="form-control" id="sede">
+                            <option value="cable">Sede Cable</option>
+                            <option value="terminal">Sede Terminal</option>
+                            <option value="centro">Sede Centro</option>
+                        </select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3">Venta total:</label>
+					<div class="col-xs-9">
+						<input type="number" class="form-control" id="inputVenta" placeholder="Venta">
+					</div>
+				</div>
+                <div class="form-group" id="resultado">
+
+                </div>
+				<br>
+				<div class="form-group">
+					<div class="col-xs-offset-3 col-xs-9">
+						<button type="reset" class="btn btn-danger" id="CuadreCaja">Enviar<span class="glyphicon glyphicon-ok"></span></button>
+						<button type="reset" class="btn btn-info">Limpiar <span class="glyphicon glyphicon-erase"></span></button>
+						<a href="##" class="btn btn-info">Cancelar <span class="glyphicon glyphicon-remove"></span></a>
+
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</body>
+
+</html>

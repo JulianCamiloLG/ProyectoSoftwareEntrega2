@@ -1,0 +1,190 @@
+.navbar{
+	margin-bottom: 0px;
+}
+.jumbotron{
+	padding: 20px 0;
+	background-color:red;
+	color: floralwhite;	
+}
+.jumbotron .titulo-blog{
+	font-size:50px; 
+	font-family: cursive;
+	font-style: oblique;
+}
+.jumbotron .subtitulo-blog{
+	font-size: 20px;
+	font-family: cursive;
+	font-style: oblique;
+}
+.subtitulos-blog{
+    background-color:antiquewhite;
+	font-size: 20px;
+	font-family: cursive;
+	font-style: oblique;
+}
+.main{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.post{
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #999;
+}
+.post .post-title a{
+	color: #333;	
+}
+.post .thumb{
+	margin-right: 10px;
+	width: 50%;
+}
+.post .thumb img{
+	width: 100%;
+}
+.post .contenedor-botones{
+	width: 100%;	
+}
+.mia{
+	background-color:bisque;
+	font-family: cursive;
+}
+.miaEnunciado{
+	background-color:bisque;
+    font-family: cursive;
+    padding-top: 5px;
+    padding-right: 8px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+}
+.post img{
+	width:100%;
+}
+.extra{
+	font-size: 30px;
+	font-family: cursive;
+	font-style: oblique;
+}
+
+.form-control{
+	background-color:cornsilk
+}
+.Especial{
+    background-color:bisque;
+}
+.Autor{
+    background-color:aliceblue;
+}
+.Evaluador{
+    background-color:antiquewhite;
+}
+.Editor{
+    background-color: azure;
+}
+.saludo{
+    width: auto; 
+    font-size: 48px;
+    font-family: cursive;
+    font-style: italic;
+    color: red;
+}
+.saludo1 img{
+    width: 87%;
+}
+.body{
+    background-color:antiquewhite;
+}
+.contenedorAnim{
+    display: flex;
+    width:600px;
+    height: 46px;
+    font-size: 39px;
+    line-height: 40px;   
+    overflow: hidden;
+    background-color:black;
+    color: aliceblue;
+}
+ul{    
+    list-style: none;
+    padding-left: 10px;
+    animation: cambiar 6s;
+}
+ul,p{
+    margin: 0;
+}
+@keyframes cambiar{
+    0%{margin-top: 0;}
+    20%{margin-top: 0;}
+    25%{margin-top: -40px;}
+    50%{margin-top: -40px;}
+    55%{margin-top: -80px;}
+    80%{margin-top: -80px;}
+    85%{margin-top: -40px;}
+    95%{margin-top: -40px;}
+    100%{margin-top: 0px;}
+}
+.bla{
+    width: 100%;
+    height: 600px;;
+}
+.ojo{
+    color: aqua;
+}
+.consultas{
+	font-family: cursive;
+	font-style: oblique;
+    background-color: antiquewhite;
+    color: black;
+}
+.Bienvenido-Usuario{
+    background-color:firebrick;
+    font-family: serif;
+    font-style: italic;
+    font-size: 25px;
+}
+.Notificacion-Usuario{
+    font-family: fantasy;
+    font-style: italic;
+    font-size: 40px;
+    background-color:black;
+    border-bottom: 6px;
+    border-style: groove;
+}
+.iframe{
+    border: 0px;
+}
+#contentWrap{
+                display: none;
+            }
+#chatWrap{
+    float: left;
+}
+#chat{
+    position: relative;
+    width: 100%;
+    float:left;
+    min-height:100%;
+    height: 90%;
+    overflow: auto;
+}
+/*--Media Querie --*/
+@media screen and (max-width: 768px){
+	.post .thumb{
+		width: 100%;
+		margin-bottom: 20px;
+		margin-right: 0;
+	}
+}
+
+.Inventario{
+    font-family: cursive;
+    background-color: black;
+    color: white;
+    justify-content: flex-end;
+}
+
+.form-bottom {
+	padding: 25px 25px 30px 25px;
+	background: #eee;
+	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
+	text-align: left;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<link rel="icon" href="../Imagenes/Favicon.ico">
+		<title>EasyAdmin</title>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-inverse navba-static-top" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+							<span class="sr-only">Desplegar/Ocultar Menú</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button
+					</div>
+					<!--Inicio menu-->
+					<div class="collapse navbar-collapse" id="navegacion-fm">
+						<dd class="nav navbar-nav">
+							<li class="active"><a href="index.html">Inicio</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Usuarios<span class="caret"></span></a>
+								<dd class="dropdown-menu" role="menu">
+									<li><a href="Login.html">Administrador(a)</a></li>
+									<li class="divider"></li>
+									<li><a href="Login.html">Meser@/Cociner@</a></li>
+									<li class="divider"></li>
+									<li class="divider"></li>
+									<li><a href="Login.html">Jefe de producción</a></li>
+								</dd>
+							</li>
+						</dd>
+						<form action="" class="navbar-form navbar-right" role="search">
+						</form>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<section class="jumbotron">
+			<div class="container">
+				<h1 class="titulo-blog">EasyAdmin</h1>
+			</div>
+		</section>
+		<section class="main container">
+			<div class="row">
+				<section class="posts col-md-9">
+					<div class="miga-de-pan">					
+						<ol class="breadcrumb">
+							<li><script type="text/javascript">
+							var d=new Date();
+							var m=d.getMonth()+1;
+							document.write(' '+d.getDate(),'/ '+m,'/ '+d.getFullYear());	
+							document.write(" "+d. getHours(),':'+d. getMinutes());
+						</script></li>	
+						</ol>
+					</div>
+					
+					<article class="post clearfix Autor">
+						<p class="thumb pull-left">
+							<img class="img-thumbnail" src="../Imagenes/Administrador.jpg">
+						</p>
+						<h2 class="post-title">
+							<p>Administrador(a)</p>
+						</h2>	
+						<blockquote>					
+						    <p class="post-contenido text-justify">"La administración trata acerca de la gestión en el corto plazo, mientras se desarrollan los planes a largo plazo."
+						    </p><footer>Jack Welch (1935-)</footer>
+						</blockquote>
+						<div class="contenedor-botones">
+							<a href="Login.html" class="btn btn-primary">Ingresar <span class="glyphicon glyphicon-user"></span></a>
+						</div>					
+					</article>
+					<article class="post clearfix Evaluador">
+						<p class="thumb pull-left">
+							<img class="img-thumbnail" src="../Imagenes/mesera-cocinera.jpg">
+						</p>
+						<h2 class="post-title">
+							<p>Meser@/Cociner@</p>
+						</h2>
+				        <blockquote>
+						    <p class="post-contenido text-justify">"Cocinar no es tan difícil. Todos tienen un gusto, aunque no se den cuenta de ello. Aunque no seas un gran chef, no hay nada que te detenga de entender la diferencia entre lo que sabe bien y lo que no."
+						    </p><footer class="post-contenido text-justify">Gerard Depardieu (1948-) </footer>
+						</blockquote>
+						<div class="contenedor-botones">
+							<a href="Login.html" class="btn btn-primary">Ingresar <span class="glyphicon glyphicon-user"></span></a>		
+						</div>					
+					</article>
+					<article class="post clearfix Editor">
+						<p class="thumb pull-left">
+							<img class="img-thumbnail" src="../Imagenes/jefe-produccion.jpg">
+						</p>
+						<h2 class="post-title">
+							<p>Jefe de producción</p>
+						</h2>	
+						<blockquote>					
+						    <p class="post-contenido text-justify">"La inteligencia consiste no solo en el conocimiento, sino también en la destreza de aplicar los conocimientos en la práctica."</p><footer class="post-contenido text-justify">Aristóteles (384 a.C- 322 a.C) </footer>
+                        </blockquote>
+						<div class="contenedor-botones">
+							<a href="Login.html" class="btn btn-primary">Ingresar <span class="glyphicon glyphicon-user"></span></a>
+						</div>					
+					</article>
+				</section>
+				<br>
+			</div>			
+		</section>		
+		<footer class="Evaluador">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-6">
+						<p>&copy EasySoluciones - Universidad de Caldas 2017</p>
+					</div>
+					<div class="col-xs-6">
+						<dd class="list-inline text-right">
+							<li><a href="#">Arriba</a></li>
+							<li><a href="#">Contacto</a></li>
+						</dd>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="../Jquery/jquery-1.11.1.min.js"></script>
+		<script src="../Jquery/jquery.backstretch.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../Boostrap/js/bootstrap.min.js"></script>
+	</body>
+	<link rel="stylesheet" href="../Boostrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../Css/estilos.css">
+    <script>
+        $(document).ready(function(){
+        $.backstretch([
+        "../Imagenes/1.jpg",
+        "../Imagenes/4.jpg",
+        "../Imagenes/6.jpg",
+        "../Imagenes/7.jpg",
+        "../Imagenes/8.jpg",
+        "../Imagenes/9.jpg",
+        "../Imagenes/10.jpg"
+        ],{
+        fade:750,
+        duration:4000
+        });
+        });
+    </script>
+</html>
