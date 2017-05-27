@@ -43,7 +43,7 @@
 								<dd class="dropdown-menu" role="menu">
 									<li><a href="CU-Gastos-Pedidos.html" target="iframeVistas">Ingresar Gastos por pedidos</a></li>
 									<li class="divider"></li>
-									<li><a href="###">###</a></li>
+									<li><a href="CU-Registrar-Inventario-Inicio-Fin-Turno.html" target="iframeVistas">Registrar Inventario</a></li>
 									<li class="divider"></li>
 									<li><a href="###">###</a></li>
 									<li class="divider"></li>
@@ -66,7 +66,7 @@
                   	<div class="col-xs-12 col-md-12 col-lg-12  body">
                         <form action="../Models/Archivar.php"  method="post" enctype="multipart/form-data" class="form-horizontal">
                             <div class="container col-xs-12 col-md-12 col-lg-12">
-                                <iframe name="iframeVistas"  width="100%" height="416px" class="iframe"></iframe>
+                                <iframe name="iframeVistas"  width="100%" height="800px" class="iframe"></iframe>
                             </div>
                         </form>
 					</div>
