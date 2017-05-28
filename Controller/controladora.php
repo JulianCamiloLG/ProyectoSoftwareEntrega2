@@ -94,6 +94,9 @@ class controladora{
 		echo json_encode($vec);
         }
     }
+    public function RegistrarInventario(){
+        echo "recibido";
+    }
 }
 
 
@@ -118,6 +121,10 @@ switch($_REQUEST['funcion']){
     case 5:
         //Consultar cuadre de caja
         $controladora->ConsultarCuadreDeCaja($_REQUEST['tipo'],$_REQUEST['sede']);
+        break;
+    case 6:
+        //Registrar inventario
+        $controladora->RegistrarInventario();
         break;
 
 
