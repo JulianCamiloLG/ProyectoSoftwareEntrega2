@@ -15,7 +15,7 @@ class IngresarProducto
     {
         $BDD=new BaseDeDatos();
         $temp=$BDD->ConectarBDD();
-        $Sql="insert into productos values('$this->producto',$this->cantidad);";
+        $Sql="insert into producto values('$this->producto',$this->cantidad);";
         $result=pg_exec($Sql);
         if (!$result){
             echo ("Error al ingresar el gasto");
