@@ -20,8 +20,7 @@ class IngresarProducto
         if (!$result){
             echo ("Error al ingresar el gasto");
         }
-        pg_exec($Sql1);
-        echo json_encode("Gasto ingresado con exito");
+        echo json_encode("Producto ingresado con exito");
     }
 }
 
