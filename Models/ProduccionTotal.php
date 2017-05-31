@@ -14,7 +14,7 @@ class ProduccionTotal{
         $this->Queso=$Queso;
         $this->Champinones=$Champinones;
     }
-    public function validarLogin(){
+    public function ingresar(){
         $BDD=new BaseDeDatos();
         $temp=$BDD->ConectarBDD();
         $Sql="insert into produccion_total values($this->Carne,$this->Pollo,$this->Chicharron,$this->Queso,$this->Champinones,current_date,to_char(current_timestamp, 'HH24:MI:SS'));";

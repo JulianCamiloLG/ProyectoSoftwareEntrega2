@@ -105,8 +105,9 @@ class controladora{
     public function RegistrarEmpleado($nombre,$apellido,$documentoidentidad,$direccion,$telefono,$rol,$usuario,$password){
         $empleado=new usuario($nombre,$apellido,$documentoidentidad,$direccion,$telefono,$rol,$usuario,$password);
         $empleado->IngresarEmpleado();
+    }
     public function TotalProduccion($datos){
-        $nuevaProduccion=$new ProduccionTotal($datos);
+        $nuevaProduccion=new ProduccionTotal($datos);
         $nuevaProduccion->ingresar();
     }
 }
