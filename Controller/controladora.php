@@ -133,8 +133,8 @@ class controladora{
 
     public function RegistrarIngresoProducto($producto,$cantidad)
     {
-        $ingresarProducto = new IngresarProducto($producto,$cantidad);
-        $ingresarProducto->ingresarProducto();
+        $ingresoProducto = new IngresarProducto($producto,$cantidad);
+        $ingresoProducto->registrarIngresoXProducto();
     }
 }
 

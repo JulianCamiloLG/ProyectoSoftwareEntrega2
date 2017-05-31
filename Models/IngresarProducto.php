@@ -11,7 +11,7 @@ class IngresarProducto
         $this->cantidad=$cantidad;
     }
 
-    public function  ingresarProducto()
+    public function  registrarIngresoXProducto()
     {
         $BDD=new BaseDeDatos();
         $temp=$BDD->ConectarBDD();
