@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<link rel="icon" href="../Imagenes/icon175x175.ico">
+		<title>Registrar Empleado</title>
+	</head>
+	<body class="body">
+		<div class="container">
+			<form role="" action="" method="" class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-xs-8 extra">DATOS REGISTRO</label>
+				</div>
+				<div class="form-group">
+					            <label class="control-label col-xs-3">Seleccionar Rol:</label>
+                					<div class="col-xs-9">
+				                		<select class="form-control" id="rol">
+                                            <option value="MESERO">Meser@</option>
+                                            <option value="COCINERO">Cociner@</option>
+                                            <option value="JPRODUCCION">Jefe de prducción</option>
+                                        </select>
+					                </div>
+				            </div>
+				<div class="form-group">
+					<label class="control-label col-xs-3">Usuario:</label>
+					<div class="col-xs-9">
+						<input class="form-control" id="inputUsuario" placeholder="Usuario">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3">Password:</label>
+					<div class="col-xs-9">
+						<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3">Confirmar Password:</label>
+					<div class="col-xs-9">
+						<input type="password" class="form-control" id="CinputPassword" placeholder="Confirmar Password">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-8 extra">DATOS PERSONALES</label>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3">Nombre:</label>
+					<div class="col-xs-9">
+						<input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3">Apellido:</label>
+					<div class="col-xs-9">
+						<input type="text" class="form-control" id="inputApellidos" placeholder="Apellido">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3">Documento de identidad:</label>
+					<div class="col-xs-9">
+						<input type="email" class="form-control" id="inputDocumento" placeholder="Documento">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3">Dirección:</label>
+					<div class="col-xs-9">
+						<input type="text" class="form-control" id="inputDireccion" placeholder="Dirección">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-xs-3" >Telefono:</label>
+					<div class="col-xs-9">
+						<input type="tel" class="form-control" id="inputTelefono" placeholder="Telefono">
+					</div>
+				</div>
+				<br>
+				<div class="form-group">
+					<div class="col-xs-offset-3 col-xs-9">
+						<button type="reset" class="btn btn-danger" id="RegistrarEmpleado" name="RegistrarEmpleado">Enviar Formulario<span class="glyphicon glyphicon-ok"></span></button>
+						<button type="reset" class="btn btn-info">Limpiar Formulario <span class="glyphicon glyphicon-erase"></span></button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="../Jquery/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../Boostrap/js/bootstrap.min.js"></script>
+		<script src="../Js/CU-Cuadre_Caja.js" type="text/javascript" language="javascript1.5"></script>
+	</body>
+	<link rel="stylesheet" href="../Boostrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../Css/estilos.css">
+</html>

@@ -184,6 +184,9 @@ switch($_REQUEST['funcion']){
         //Mokaccino
         $controladora->RegistrarInventario($cajero,'Mokaccino',$_REQUEST['sedeInventario'],$_REQUEST['inicioMokaccino'],$_REQUEST['entraMokaccino'],$_REQUEST['devolMokaccino'],$_REQUEST['saldoMokaccino'],$_REQUEST['ventaMokaccino']);
         break;
+    case 7:
+        $controladora->RegistrarEmpleado();
+        break;
 
 
 }
