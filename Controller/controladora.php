@@ -4,6 +4,7 @@ include_once("../Models/Login.php");
 include_once("../Models/CuadreCaja.php");
 include_once("../Models/GastoTurno.php");
 include_once("../Models/RegistroInventario.php");
+include_once("../Models/ProduccionTotal.php");
 //include_once("../Models/Base.php");
 
 class controladora{
@@ -100,6 +101,11 @@ class controladora{
         $ECarne=new RegistroInventario($producto,$inicio,$entra,$devol,$total,$saldo,$venta,$cajero,$sede);
         $ECarne->IngresarInventario();
     }
+
+    public function TotalProduccion($datos){
+        $nuevaProduccion=$new ProduccionTotal($datos);
+        $nuevaProduccion->ingresar();
+    }
 }
 
 
@@ -183,6 +189,9 @@ switch($_REQUEST['funcion']){
         $controladora->RegistrarInventario($cajero,'Tinto',$_REQUEST['sedeInventario'],$_REQUEST['inicioTinto'],$_REQUEST['entraTinto'],$_REQUEST['devolTinto'],$_REQUEST['saldoTinto'],$_REQUEST['ventaTinto']);
         //Mokaccino
         $controladora->RegistrarInventario($cajero,'Mokaccino',$_REQUEST['sedeInventario'],$_REQUEST['inicioMokaccino'],$_REQUEST['entraMokaccino'],$_REQUEST['devolMokaccino'],$_REQUEST['saldoMokaccino'],$_REQUEST['ventaMokaccino']);
+        break;
+    case 7:
+        $controladora->TotalProduccion($_REQUEST['datos']);
         break;
 
 
