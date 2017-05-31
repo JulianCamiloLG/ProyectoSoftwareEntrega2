@@ -12,7 +12,7 @@ $("#RegistrarEmpleado").button().on("click",function(event){
 
     if(contrasena==ccontrasena){
         if(usuario!="" && contrasena!="" && nombre!="" && documentoidentidad!="" && !isNaN(documentoidentidad) && rol!=""){
-            $.post("../Controller/controladora.php",{nombre:nombre,apellidos:apellidos,documentoidentidad:documentoidentidad,direccion:direccion,telefono:telefono,rol:rol,usuario:usuario,contrasena:contrasena,funcion:7},function(respuesta){
+            $.post("../Controller/controladora.php",{nombre:nombre,apellidos:apellidos,documentoidentidad:documentoidentidad,direccion:direccion,telefono:telefono,rol:rol,usuario:usuario,contrasena:contrasena,funcion:8},function(respuesta){
                 alert(respuesta);
             })
         }else{
@@ -79,11 +79,11 @@ $("#verEmpleados").button().on("click",function(event){
 				elementotd.appendChild(texto);
                 //pruebas
                 var elementotd=document.createElement('td');
-				elementotd.setAttribute("class","tablaConsolidado");
 				elementotr.appendChild(elementotd);
-				var texto=document.createTextNode(datos[i].usuario);
-				elementotd.appendChild(texto);
-				elementotd.setAttribute("align","center");
+				var elemtoa=document.createElement('a');				elemtoa.setAttribute('href',"../Models/EliminarEmpleado.php?"+'documentoIdentidad='+datos[i].documentoidentidad);
+				var createAText = document.createTextNode('Aplicar');
+				elemtoa.appendChild(createAText);
+				elementotd.appendChild(elemtoa);
                 //
 				var obj=document.getElementById('Contenido');
 				obj.appendChild(elementotr);

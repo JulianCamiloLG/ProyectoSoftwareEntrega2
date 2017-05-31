@@ -45,13 +45,26 @@ class usuario{
             echo json_encode("Empleado registrado con exito");
         }
     }
-    //consultar daots de los empleados
+    //consultar datos de los empleados
     public function consultardatosEmpleados(){
         $BDD=new BaseDeDatos();
         $temp=$BDD->ConectarBDD();
         $Sql="select nombre,apellido,documentoidentidad,direccion,telefono,rol,usuario from usuarios;";
         $Registros=pg_exec($Sql);
 		return($Registros);
+    }
+    //eliminar empleado
+    public function eliminarEmpleado($documentoIdentidad){
+        $BDD=new BaseDeDatos();
+        $temp=$BDD->ConectarBDD();
+        $Sql="delete from usuarios where documentoidentidad=$documentoIdentidad;";
+        $result=pg_exec($Sql);
+        if (!$result){
+            echo ("Error al eliminar empleado");
+        }else{
+            echo json_encode("Empleado eliminado con exito");
+        }
+
     }
 
 }
