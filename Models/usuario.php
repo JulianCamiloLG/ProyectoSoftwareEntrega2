@@ -14,6 +14,7 @@ class usuario{
         $this->nombre=$nombre;
         $this->apellido=$apellido;
         $this->documentoidentidad=$documentoidentidad;
+        $this->direccion=$direccion;
         $this->telefono=$telefono;
         $this->rol=$rol;
         $this->usuario=$usuario;
@@ -44,6 +45,15 @@ class usuario{
             echo json_encode("Empleado registrado con exito");
         }
     }
+    //consultar daots de los empleados
+    public function consultardatosEmpleados(){
+        $BDD=new BaseDeDatos();
+        $temp=$BDD->ConectarBDD();
+        $Sql="select nombre,apellido,documentoidentidad,direccion,telefono,rol,usuario from usuarios;";
+        $Registros=pg_exec($Sql);
+		return($Registros);
+    }
+
 }
 
 ?>

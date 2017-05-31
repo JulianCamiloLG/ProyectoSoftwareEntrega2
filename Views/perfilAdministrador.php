@@ -50,6 +50,8 @@
 									<li><a href="CU-Consultar-Cuadre-Total.html" target="iframeVistas">Consultar cuadre de caja total</a></li>
 									<li class="divider"></li>
 									<li><a href="Registrar-Empleado.html" target="iframeVistas">Registrar empleado</a></li>
+									<li class="divider"></li>
+									<li><a href="Consultar-Empleado.html" target="iframeVistas">Consolidado de empleados</a></li>
 								</dd>
 							</li>
 						</dd>

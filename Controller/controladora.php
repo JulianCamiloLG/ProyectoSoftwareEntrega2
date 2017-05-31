@@ -110,6 +110,25 @@ class controladora{
         $nuevaProduccion=new ProduccionTotal($datos);
         $nuevaProduccion->ingresar();
     }
+    public function ConsultarEmpleados(){
+        $emp=new usuario("","","","","","","","");
+		$Registros=$emp->consultardatosEmpleados();
+		$Filas=pg_numrows($Registros);
+		for($cont=0;$cont<$Filas;$cont++){
+			$vec=array(
+				"nombre"=>"".pg_result($Registros,$cont,0),
+				"apellido"=>"".pg_result($Registros,$cont,1),
+				"documentoidentidad"=>"".pg_result($Registros,$cont,2),
+				"direccion"=>"".pg_result($Registros,$cont,3),
+				"telefono"=>"".pg_result($Registros,$cont,4),
+				"rol"=>"".pg_result($Registros,$cont,5),
+                "usuario"=>"".pg_result($Registros,$cont,6),);
+			$M[$cont]=$vec;
+		}
+		pg_FreeResult($Registros);
+		$vec=$M;
+		echo json_encode($vec);
+    }
 }
 
 
@@ -199,6 +218,9 @@ switch($_REQUEST['funcion']){
         break;
     case 8:
         $controladora->RegistrarEmpleado($_REQUEST['nombre'],$_REQUEST['apellidos'],$_REQUEST['documentoidentidad'],$_REQUEST['direccion'],$_REQUEST['telefono'],$_REQUEST['rol'],$_REQUEST['usuario'],$_REQUEST['contrasena']);
+        break;
+    case 9:
+        $controladora->ConsultarEmpleados();
         break;
 
 

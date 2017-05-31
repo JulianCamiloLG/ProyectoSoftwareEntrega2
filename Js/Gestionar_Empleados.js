@@ -21,3 +21,72 @@ $("#RegistrarEmpleado").button().on("click",function(event){
             alert("Contraseñas no coinciden");
         }
 })
+// Consultar de informacion de los empleados
+$("#verEmpleados").button().on("click",function(event){
+    $.post("../Controller/controladora.php",{funcion:9},function(respuesta){
+        var datos= jQuery.parseJSON(respuesta);
+            for (var i in datos){
+                //alert("Cedula: "+datos[i].Cedula+" Nombre: "+datos[i].Nombre+" Apellido: "+datos[i].Apellido);
+                var elementotr=document.createElement('tr');
+				elementotr.setAttribute("class","tablaConsolidado");
+				// creacion primer td y se lo asigno al padre tr
+				var elementotd=document.createElement('td');
+				elementotd.setAttribute("class","tablaConsolidado");
+				elementotr.appendChild(elementotd);
+				var texto=document.createTextNode(datos[i].nombre);
+				elementotd.appendChild(texto);
+				elementotd.setAttribute("align","center");
+				// creacion segundo td y se lo asigno al padre tr
+				var elementotd=document.createElement('td');
+				elementotd.setAttribute("class","tablaConsolidado");
+				elementotr.appendChild(elementotd);
+				var texto=document.createTextNode(datos[i].apellido);
+				elementotd.appendChild(texto);
+				elementotd.setAttribute("align","center");
+				// creacion tercer td y se lo asigno al padre tr
+				var elementotd=document.createElement('td');
+				elementotd.setAttribute("class","tablaConsolidado");
+				elementotr.appendChild(elementotd);
+				var texto=document.createTextNode(datos[i].documentoidentidad);
+				elementotd.appendChild(texto);
+				elementotd.setAttribute("align","center");
+                // creacion cuarto td y se lo asigno al padre tr
+				var elementotd=document.createElement('td');
+				elementotd.setAttribute("class","tablaConsolidado");
+				elementotr.appendChild(elementotd);
+				var texto=document.createTextNode(datos[i].direccion);
+				elementotd.appendChild(texto);
+				elementotd.setAttribute("align","center");
+                // creacion quinto td y se lo asigno al padre tr
+				var elementotd=document.createElement('td');
+				elementotd.setAttribute("class","tablaConsolidado");
+				elementotr.appendChild(elementotd);
+				var texto=document.createTextNode(datos[i].telefono);
+				elementotd.appendChild(texto);
+				elementotd.setAttribute("align","center");
+                // creacion sexto td y se lo asigno al padre tr
+				var elementotd=document.createElement('td');
+				elementotd.setAttribute("class","tablaConsolidado");
+				elementotr.appendChild(elementotd);
+				var texto=document.createTextNode(datos[i].rol);
+				elementotd.appendChild(texto);
+				elementotd.setAttribute("align","center");
+                // creacion septimo td y se lo asigno al padre tr
+                var elementotd=document.createElement('td');
+				elementotd.setAttribute("class","tablaConsolidado");
+				elementotr.appendChild(elementotd);
+				var texto=document.createTextNode(datos[i].usuario);
+				elementotd.appendChild(texto);
+                //pruebas
+                var elementotd=document.createElement('td');
+				elementotd.setAttribute("class","tablaConsolidado");
+				elementotr.appendChild(elementotd);
+				var texto=document.createTextNode(datos[i].usuario);
+				elementotd.appendChild(texto);
+				elementotd.setAttribute("align","center");
+                //
+				var obj=document.getElementById('Contenido');
+				obj.appendChild(elementotr);
+            }
+    })
+})
