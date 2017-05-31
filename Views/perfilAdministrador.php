@@ -49,7 +49,7 @@
 									<li class="divider"></li>
 									<li><a href="CU-Consultar-Cuadre-Total.html" target="iframeVistas">Consultar cuadre de caja total</a></li>
 									<li class="divider"></li>
-									<li><a href="###">Registrar empleado</a></li>
+									<li><a href="Registrar-Empleado.html" target="iframeVistas">Registrar empleado</a></li>
 								</dd>
 							</li>
 						</dd>
@@ -68,7 +68,7 @@
                   	<div class="col-xs-12 col-md-12 col-lg-12  body">
                         <form action="../Models/Archivar.php"  method="post" enctype="multipart/form-data" class="form-horizontal">
                             <div class="container col-xs-12 col-md-12 col-lg-12">
-                                <iframe name="iframeVistas"  width="100%" height="416px" class="iframe"></iframe>
+                                <iframe name="iframeVistas"  width="100%" height="650px" class="iframe"></iframe>
                             </div>
                         </form>
 					</div>

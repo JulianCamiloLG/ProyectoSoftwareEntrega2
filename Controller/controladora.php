@@ -191,7 +191,11 @@ switch($_REQUEST['funcion']){
         $controladora->RegistrarInventario($cajero,'Mokaccino',$_REQUEST['sedeInventario'],$_REQUEST['inicioMokaccino'],$_REQUEST['entraMokaccino'],$_REQUEST['devolMokaccino'],$_REQUEST['saldoMokaccino'],$_REQUEST['ventaMokaccino']);
         break;
     case 7:
+<<<<<<< HEAD
         $controladora->TotalProduccion($_REQUEST['datos']);
+=======
+        $controladora->RegistrarEmpleado();
+>>>>>>> origin/master
         break;
 
 
