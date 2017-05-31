@@ -129,9 +129,6 @@ class controladora{
 		$vec=$M;
 		echo json_encode($vec);
     }
-    public function EliminarEmpleados($documentoidentidad){
-        echo ($documentoidentidad);
-    }
 }
 
 
@@ -225,11 +222,6 @@ switch($_REQUEST['funcion']){
     case 9:
         $controladora->ConsultarEmpleados();
         break;
-    case 10:
-        $controladora->EliminarEmpleados($_REQUEST['documentoidentidad']);
-        break;
-
-
 }
 
 ?>
