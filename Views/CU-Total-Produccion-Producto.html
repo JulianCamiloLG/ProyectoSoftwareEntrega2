@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../Boostrap/css/bootstrap.min.css">
+    <link rel="icon" href="../Imagenes/Favicon.ico">
+    <link rel="stylesheet" href="../Css/estilos.css">
+    <link rel="stylesheet" href="../Boostrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../Css/estilos.css">
+    <script src="../Jquery/jquery-1.11.1.min.js" ></script>
+    <script src="../Boostrap/js/bootstrap.min.js"></script>
+    <script src="../Js/CU-Total-Produccion.js" type="text/javascript" language="javascript1.5"></script>
+    <title>Producción por producto</title>
+</head>
+    <body class="body">
+        <div class="container">
+            <section>
+                <div class="table-responsive">
+                    <table class="Tabla-inventario table table-bordered table-hover table-condensed" id="Tabla-total">
+                        <tr class="info">
+                          <h1>
+                             <p class="Inventario">
+                                 REGISTRAR TOTAL DE PRODUCCION SAN JUANITAS
+                             </p>
+                          </h1>
+                    </tr>
+                    <br>
+                    <br>
+                    <tr class="success">
+                        <th>FECHA:
+                            <script type="text/javascript">
+                                var date = new Date();
+                                var d  = date.getDate();
+                                var day = (d < 10) ? '0' + d : d;
+                                var m = date.getMonth() + 1;
+                                var month = (m < 10) ? '0' + m : m;
+                                var yy = date.getYear();
+                                var year = (yy < 1000) ? yy + 1900 : yy;
+                                document.write(day + "/" + month + "/" + year);
+                            </script>
+                        </th>
+                    </tr>
+                        <tr class="warning">
+                        <td>Empanadas de Carne</td>
+                        <td><input type="number" placeholder="Producido" class="txtInicioECarne" id="totalCarne"></td>
+                        </tr>
+                        <tr class="warning">
+                        <td>Empanadas de Pollo</td>
+                        <td><input type="number" placeholder="Producido" class="txtInicioECarne" id="totalPollo"></td>
+                        </tr>
+                        <tr class="warning">
+                        <td>Empanadas de Chicharrón</td>
+                        <td><input type="number" placeholder="Producido" class="txtInicioECarne" id="totalChicha"></td>
+                        </tr>
+                        <tr class="warning">
+                        <td>Empanadas de Queso</td>
+                        <td><input type="number" placeholder="Producido" class="txtInicioECarne" id="totalQueso"></td>
+                        </tr>
+                        <tr class="warning">
+                        <td>Empanadas de Champiñones</td>
+                        <td><input type="number" placeholder="Producido" class="txtInicioECarne" id="totalChamp"></td>
+                        </tr>
+                    </table>
+                    <div class="form-bottom">
+                    <button type="button" class="btn-block btn-danger btn-lg" id="guardartotal">Registrar<span class="glyphicon glyphicon-floppy-saved"></span> </button>
+                </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

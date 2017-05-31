@@ -5,6 +5,7 @@ include_once("../Models/CuadreCaja.php");
 include_once("../Models/GastoTurno.php");
 include_once("../Models/RegistroInventario.php");
 include_once("../Models/usuario.php");
+include_once("../Models/ProduccionTotal.php");
 //include_once("../Models/Base.php");
 
 class controladora{
@@ -104,7 +105,9 @@ class controladora{
     public function RegistrarEmpleado($nombre,$apellido,$documentoidentidad,$direccion,$telefono,$rol,$usuario,$password){
         $empleado=new usuario($nombre,$apellido,$documentoidentidad,$direccion,$telefono,$rol,$usuario,$password);
         $empleado->IngresarEmpleado();
-
+    public function TotalProduccion($datos){
+        $nuevaProduccion=$new ProduccionTotal($datos);
+        $nuevaProduccion->ingresar();
     }
 }
 
@@ -191,6 +194,9 @@ switch($_REQUEST['funcion']){
         $controladora->RegistrarInventario($cajero,'Mokaccino',$_REQUEST['sedeInventario'],$_REQUEST['inicioMokaccino'],$_REQUEST['entraMokaccino'],$_REQUEST['devolMokaccino'],$_REQUEST['saldoMokaccino'],$_REQUEST['ventaMokaccino']);
         break;
     case 7:
+        $controladora->TotalProduccion($_REQUEST['datos']);
+        break;
+    case 8:
         $controladora->RegistrarEmpleado($_REQUEST['nombre'],$_REQUEST['apellidos'],$_REQUEST['documentoidentidad'],$_REQUEST['direccion'],$_REQUEST['telefono'],$_REQUEST['rol'],$_REQUEST['usuario'],$_REQUEST['contrasena']);
         break;
 
