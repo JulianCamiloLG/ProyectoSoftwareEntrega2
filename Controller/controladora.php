@@ -4,6 +4,7 @@ include_once("../Models/Login.php");
 include_once("../Models/CuadreCaja.php");
 include_once("../Models/GastoTurno.php");
 include_once("../Models/RegistroInventario.php");
+include_once("../Models/usuario.php");
 //include_once("../Models/Base.php");
 
 class controladora{
@@ -13,7 +14,7 @@ class controladora{
     }
 
     public function LoginUsuario($user,$password){
-        $login=new Login($user,$password,"");
+        $login=new usuario("","","","","","",$user,$password);
         $Registros=$login->validarLogin();
         if($Registros=='ADMINISTRADOR'){
             session_start();
@@ -100,6 +101,11 @@ class controladora{
         $ECarne=new RegistroInventario($producto,$inicio,$entra,$devol,$total,$saldo,$venta,$cajero,$sede);
         $ECarne->IngresarInventario();
     }
+    public function RegistrarEmpleado($nombre,$apellido,$documentoidentidad,$direccion,$telefono,$rol,$usuario,$password){
+        $empleado=new usuario($nombre,$apellido,$documentoidentidad,$direccion,$telefono,$rol,$usuario,$password);
+        $empleado->IngresarEmpleado();
+
+    }
 }
 
 
@@ -185,7 +191,7 @@ switch($_REQUEST['funcion']){
         $controladora->RegistrarInventario($cajero,'Mokaccino',$_REQUEST['sedeInventario'],$_REQUEST['inicioMokaccino'],$_REQUEST['entraMokaccino'],$_REQUEST['devolMokaccino'],$_REQUEST['saldoMokaccino'],$_REQUEST['ventaMokaccino']);
         break;
     case 7:
-        $controladora->RegistrarEmpleado();
+        $controladora->RegistrarEmpleado($_REQUEST['nombre'],$_REQUEST['apellidos'],$_REQUEST['documentoidentidad'],$_REQUEST['direccion'],$_REQUEST['telefono'],$_REQUEST['rol'],$_REQUEST['usuario'],$_REQUEST['contrasena']);
         break;
 
 

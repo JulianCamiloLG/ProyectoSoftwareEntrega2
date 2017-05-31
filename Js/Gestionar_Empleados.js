@@ -13,8 +13,7 @@ $("#RegistrarEmpleado").button().on("click",function(event){
     if(contrasena==ccontrasena){
         if(usuario!="" && contrasena!="" && nombre!="" && documentoidentidad!="" && !isNaN(documentoidentidad) && rol!=""){
             $.post("../Controller/controladora.php",{nombre:nombre,apellidos:apellidos,documentoidentidad:documentoidentidad,direccion:direccion,telefono:telefono,rol:rol,usuario:usuario,contrasena:contrasena,funcion:7},function(respuesta){
-                alert("¡¡BIENVENIDO " + usuario + "!!");
-                parent.window.location='index1.html';
+                alert(respuesta);
             })
         }else{
             alert("Debe ingresar campos obligatorios");

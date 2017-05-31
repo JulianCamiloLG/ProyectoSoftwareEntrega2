@@ -19,16 +19,30 @@ class usuario{
         $this->usuario=$usuario;
         $this->password=$password;
     }
+    //Loggear usuario
+    public function validarLogin(){
+        $BDD=new BaseDeDatos();
+        $temp=$BDD->ConectarBDD();
+        $Sql="select rol from usuarios where usuario='$this->usuario' and password='$this->password'";
+        $Registro=pg_exec($Sql);
+        if(!$Registro){
+            echo ("Error de validacion");
+        }else{
+            $row = pg_fetch_row($Registro);
+            return ($row[0]);
+        }
+    }
     //Registar empleado en la base de datos
     public function IngresarEmpleado(){
         $BDD=new BaseDeDatos();
         $temp=$BDD->ConectarBDD();
-        $Sql="insert into usuarios values('$this->nombre','$this-apellido',$this->documentoidentidad,'$this->direccion',$this->telefono,'$this->rol','$this->usuario','$this->password');";
+        $Sql="insert into usuarios values('$this->nombre','$this->apellido',$this->documentoidentidad,'$this->direccion',$this->telefono,'$this->rol','$this->usuario','$this->password');";
         $result=pg_exec($Sql);
         if (!$result){
             echo ("Error al registrar empleado");
+        }else{
+            echo json_encode("Empleado registrado con exito");
         }
-        //echo json_encode("Gasto ingresado con exito");
     }
 }
 
