@@ -7,7 +7,11 @@ include_once("../Models/RegistroInventario.php");
 include_once("../Models/usuario.php");
 include_once("../Models/ProduccionTotal.php");
 include_once("../Models/IngresarProducto.php");
+<<<<<<< HEAD
 //include_once("../Models/Base.php");
+=======
+
+>>>>>>> origin/master
 
 class controladora{
     public function IngresarGasto($valor,$descripcion,$nit,$numerofactura,$nombreempresa){
