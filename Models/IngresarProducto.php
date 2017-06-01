@@ -15,12 +15,13 @@ class IngresarProducto
     {
         $BDD=new BaseDeDatos();
         $temp=$BDD->ConectarBDD();
-        $Sql="update producto set cantidadMinima = cantidadMinima + $this->cantidad where nombreP='$this->producto');";
+        $Sql="update producto set cantidadMinima = cantidadMinima + $this->cantidad where lower("nombreP") = lower('$this->producto')";
         $result=pg_exec($Sql);
         if (!$result){
             echo ("Error al ingresar el gasto");
+        }else{
+            echo json_encode("Producto ingresado con exito");
         }
-        echo json_encode("Producto ingresado con exito");
     }
 }
 
