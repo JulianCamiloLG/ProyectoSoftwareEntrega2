@@ -6,6 +6,7 @@ include_once("../Models/GastoTurno.php");
 include_once("../Models/RegistroInventario.php");
 include_once("../Models/usuario.php");
 include_once("../Models/ProduccionTotal.php");
+include_once("../Models/IngresarProducto.php")
 //include_once("../Models/Base.php");
 
 class controladora{
@@ -129,6 +130,12 @@ class controladora{
 		$vec=$M;
 		echo json_encode($vec);
     }
+
+    public function RegistrarIngresoProducto($producto,$cantidad)
+    {
+        $ingresoProducto = new IngresarProducto($producto,$cantidad);
+        $ingresoProducto->registrarIngresoXProducto();
+    }
 }
 
 
@@ -221,6 +228,9 @@ switch($_REQUEST['funcion']){
         break;
     case 9:
         $controladora->ConsultarEmpleados();
+        break;
+    case 10:
+        $controladora->RegistrarIngresoProducto($_REQUEST['producto'],$_REQUEST['cantidad']);
         break;
 }
 
