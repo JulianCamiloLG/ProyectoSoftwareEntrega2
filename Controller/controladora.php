@@ -4,7 +4,9 @@ include_once("../Models/Login.php");
 include_once("../Models/CuadreCaja.php");
 include_once("../Models/GastoTurno.php");
 include_once("../Models/RegistroInventario.php");
+include_once("../Models/usuario.php");
 include_once("../Models/ProduccionTotal.php");
+include_once("../Models/IngresarProducto.php")
 //include_once("../Models/Base.php");
 
 class controladora{
@@ -14,7 +16,7 @@ class controladora{
     }
 
     public function LoginUsuario($user,$password){
-        $login=new Login($user,$password,"");
+        $login=new usuario("","","","","","",$user,$password);
         $Registros=$login->validarLogin();
         if($Registros=='ADMINISTRADOR'){
             session_start();
@@ -101,10 +103,38 @@ class controladora{
         $ECarne=new RegistroInventario($producto,$inicio,$entra,$devol,$total,$saldo,$venta,$cajero,$sede);
         $ECarne->IngresarInventario();
     }
-
+    public function RegistrarEmpleado($nombre,$apellido,$documentoidentidad,$direccion,$telefono,$rol,$usuario,$password){
+        $empleado=new usuario($nombre,$apellido,$documentoidentidad,$direccion,$telefono,$rol,$usuario,$password);
+        $empleado->IngresarEmpleado();
+    }
     public function TotalProduccion($datos){
-        $nuevaProduccion=$new ProduccionTotal($datos);
+        $nuevaProduccion=new ProduccionTotal($datos);
         $nuevaProduccion->ingresar();
+    }
+    public function ConsultarEmpleados(){
+        $emp=new usuario("","","","","","","","");
+		$Registros=$emp->consultardatosEmpleados();
+		$Filas=pg_numrows($Registros);
+		for($cont=0;$cont<$Filas;$cont++){
+			$vec=array(
+				"nombre"=>"".pg_result($Registros,$cont,0),
+				"apellido"=>"".pg_result($Registros,$cont,1),
+				"documentoidentidad"=>"".pg_result($Registros,$cont,2),
+				"direccion"=>"".pg_result($Registros,$cont,3),
+				"telefono"=>"".pg_result($Registros,$cont,4),
+				"rol"=>"".pg_result($Registros,$cont,5),
+                "usuario"=>"".pg_result($Registros,$cont,6),);
+			$M[$cont]=$vec;
+		}
+		pg_FreeResult($Registros);
+		$vec=$M;
+		echo json_encode($vec);
+    }
+
+    public function RegistrarIngresoProducto($producto,$cantidad)
+    {
+        $ingresoProducto = new IngresarProducto($producto,$cantidad);
+        $ingresoProducto->registrarIngresoXProducto();
     }
 }
 
@@ -191,14 +221,17 @@ switch($_REQUEST['funcion']){
         $controladora->RegistrarInventario($cajero,'Mokaccino',$_REQUEST['sedeInventario'],$_REQUEST['inicioMokaccino'],$_REQUEST['entraMokaccino'],$_REQUEST['devolMokaccino'],$_REQUEST['saldoMokaccino'],$_REQUEST['ventaMokaccino']);
         break;
     case 7:
-<<<<<<< HEAD
         $controladora->TotalProduccion($_REQUEST['datos']);
-=======
-        $controladora->RegistrarEmpleado();
->>>>>>> origin/master
         break;
-
-
+    case 8:
+        $controladora->RegistrarEmpleado($_REQUEST['nombre'],$_REQUEST['apellidos'],$_REQUEST['documentoidentidad'],$_REQUEST['direccion'],$_REQUEST['telefono'],$_REQUEST['rol'],$_REQUEST['usuario'],$_REQUEST['contrasena']);
+        break;
+    case 9:
+        $controladora->ConsultarEmpleados();
+        break;
+    case 10:
+        $controladora->RegistrarIngresoProducto($_REQUEST['producto'],$_REQUEST['cantidad']);
+        break;
 }
 
 ?>
