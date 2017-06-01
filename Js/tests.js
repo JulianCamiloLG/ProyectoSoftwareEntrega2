@@ -1,4 +1,5 @@
 //Pruebas unitarias de las validaciones del caso de uso Registrar inventario inicio fin de turno
+
 QUnit.module ("numericos");
 QUnit.test("Valores ingresados validos",function(assert){
     var temporal=1;
@@ -15,7 +16,8 @@ QUnit.test("Valores ingresados validos",function(assert){
     var temporal=10;   assert.equal(temporal,10);
 })
 QUnit.test("Valores ingresados invalidos",function(assert){
-    var temporal;   assert.equal(temporal,assert.NULL);
+    var temporal;
+    assert.equal(temporal,assert.NULL);
 })
 QUnit.module("Mayores a cero");
 QUnit.test("Valores ingresados validos",function(assert){
