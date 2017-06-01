@@ -6,8 +6,8 @@ include_once("../Models/GastoTurno.php");
 include_once("../Models/RegistroInventario.php");
 include_once("../Models/usuario.php");
 include_once("../Models/ProduccionTotal.php");
-include_once("../Models/IngresarProducto.php")
-//include_once("../Models/Base.php");
+include_once("../Models/IngresarProducto.php");
+
 
 class controladora{
     public function IngresarGasto($valor,$descripcion,$nit,$numerofactura,$nombreempresa){
