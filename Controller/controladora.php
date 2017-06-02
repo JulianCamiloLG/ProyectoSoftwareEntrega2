@@ -7,11 +7,6 @@ include_once("../Models/RegistroInventario.php");
 include_once("../Models/usuario.php");
 include_once("../Models/ProduccionTotal.php");
 include_once("../Models/IngresarProducto.php");
-<<<<<<< HEAD
-//include_once("../Models/Base.php");
-=======
-
->>>>>>> origin/master
 
 class controladora{
     public function IngresarGasto($valor,$descripcion,$nit,$numerofactura,$nombreempresa){
@@ -140,6 +135,20 @@ class controladora{
         $ingresoProducto = new IngresarProducto($producto,$cantidad);
         $ingresoProducto->registrarIngresoXProducto();
     }
+    public function ActualizarTablaInventario(){
+        $InventarioTemporal=new RegistroInventario("","","","","","","","","");
+        $Registros=$InventarioTemporal->ActualizarTemporalInventario();
+        $Filas=pg_numrows($Registros);
+		for($cont=0;$cont<$Filas;$cont++){
+			$vec=array(
+				"producto"=>"".pg_result($Registros,$cont,0),
+				"total"=>"".pg_result($Registros,$cont,1),);
+			$M[$cont]=$vec;
+		}
+		pg_FreeResult($Registros);
+		$vec=$M;
+		echo json_encode($vec);
+    }
 }
 
 
@@ -235,6 +244,9 @@ switch($_REQUEST['funcion']){
         break;
     case 10:
         $controladora->RegistrarIngresoProducto($_REQUEST['producto'],$_REQUEST['cantidad']);
+        break;
+    case 11:
+        $controladora->ActualizarTablaInventario();
         break;
 }
 
