@@ -41,7 +41,8 @@ class RegistroInventario{
               from inventarioturno
               where turno in(
                             select MAX(turno)
-                            from inventarioturno);";
+                            from inventarioturno)
+                     and lower(sede)='$this->sede';";
         $Registros=pg_exec($Sql);
 		return($Registros);
     }

@@ -136,19 +136,24 @@ class controladora{
         $ingresoProducto = new IngresarProducto($producto,$cantidad);
         $ingresoProducto->registrarIngresoXProducto();
     }
-    public function ActualizarTablaInventario(){
-        $InventarioTemporal=new RegistroInventario("","","","","","","","","");
+    public function ActualizarTablaInventario($sede){
+        $InventarioTemporal=new RegistroInventario("","","","","","","","",$sede);
         $Registros=$InventarioTemporal->ActualizarTemporalInventario();
         $Filas=pg_numrows($Registros);
-		for($cont=0;$cont<$Filas;$cont++){
-			$vec=array(
-				"producto"=>"".pg_result($Registros,$cont,0),
-				"total"=>"".pg_result($Registros,$cont,1),);
-			$M[$cont]=$vec;
-		}
-		pg_FreeResult($Registros);
-		$vec=$M;
-		echo json_encode($vec);
+        if ($Filas!=0){
+            for($cont=0;$cont<$Filas;$cont++){
+                $vec=array(
+                    "producto"=>"".pg_result($Registros,$cont,0),
+                    "total"=>"".pg_result($Registros,$cont,1),);
+                $M[$cont]=$vec;
+            }
+            pg_FreeResult($Registros);
+            $vec=$M;
+            echo json_encode($vec);
+        }else{
+            echo ("No existen registros");
+
+        }
     }
 }
 
@@ -247,7 +252,7 @@ switch($_REQUEST['funcion']){
         $controladora->RegistrarIngresoProducto($_REQUEST['producto'],$_REQUEST['cantidad']);
         break;
     case 11:
-        $controladora->ActualizarTablaInventario();
+        $controladora->ActualizarTablaInventario($_REQUEST['sede']);
         break;
 }
 

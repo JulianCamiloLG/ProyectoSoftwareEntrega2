@@ -199,7 +199,9 @@ $('#GuardarInventario').button().on("click", function(event){
         }
 })
 $('#IniciarInventario').button().on("click",function(){
-    $.post("../Controller/controladora.php",{funcion:11},function(respuesta){
+    sedeInventario=$('#sedeInventario').val();
+    $.post("../Controller/controladora.php",{sede:sedeInventario,funcion:11},function(respuesta){
+        if (respuesta.length>20){
         var datos= jQuery.parseJSON(respuesta);
                 if(datos[0].producto==="EmpaCarne"){
                     $("#txtInicioECarne").val(datos[0].total);
@@ -282,6 +284,9 @@ $('#IniciarInventario').button().on("click",function(){
                 if(datos[26].producto==="Mokaccino"){
                     $("#txtInicioMokaccino").val(datos[26].total);
                 }
+            }else{
+                alert("No existen registros");
+            }
 
     })
 })
