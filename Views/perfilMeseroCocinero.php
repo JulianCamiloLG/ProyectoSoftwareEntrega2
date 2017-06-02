@@ -45,7 +45,7 @@
 									<li class="divider"></li>
 									<li><a href="CU-Registrar-Inventario-Inicio-Fin-Turno.html" target="iframeVistas">Registrar Inventario</a></li>
 									<li class="divider"></li>
-									<li><a href="###">###</a></li>
+									<li><a href="CU-Registrar-Ingreso-Por-Producto.html" target="iframeVistas">Registrar Ingreso Por Producto</a></li>
 									<li class="divider"></li>
 									<li><a href="###">###</a></li>
 								</dd>
