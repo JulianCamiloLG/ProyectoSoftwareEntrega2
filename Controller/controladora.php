@@ -7,13 +7,6 @@ include_once("../Models/RegistroInventario.php");
 include_once("../Models/usuario.php");
 include_once("../Models/ProduccionTotal.php");
 include_once("../Models/IngresarProducto.php");
-<<<<<<< HEAD
-
-
-include_once("../Models/BaseDeDatos.php");
-
-=======
->>>>>>> origin/master
 
 class controladora{
     public function IngresarGasto($valor,$descripcion,$nit,$numerofactura,$nombreempresa){
@@ -104,7 +97,6 @@ class controladora{
 		echo json_encode($vec);
         }
     }
-<<<<<<< HEAD
 
     public function ConsultarInventario($tipo,$sede){
         //echo ($tipo);
@@ -135,9 +127,6 @@ class controladora{
     }
 
     public function RegistrarInventario($cajero,$producto,$sede,$inicio,$entra,$devol,$saldo,$venta){
-=======
-    public function RegistrarInventario($cajero,$producto,$sede,$inicio,$entra,$devol,$venta){
->>>>>>> origin/master
         $total=($inicio+$entra)-$devol;
         $saldo=$total-$venta;
         $ECarne=new RegistroInventario($producto,$inicio,$entra,$devol,$total,$saldo,$venta,$cajero,$sede);
@@ -171,8 +160,7 @@ class controladora{
 		echo json_encode($vec);
     }
 
-    public function RegistrarIngresoProducto($producto,$cantidad)
-    {
+    public function RegistrarIngresoProducto($producto,$cantidad){
         $ingresoProducto = new IngresarProducto($producto,$cantidad);
         $ingresoProducto->registrarIngresoXProducto();
     }
@@ -201,7 +189,7 @@ class controladora{
 $controladora=new controladora();
 switch($_REQUEST['funcion']){
     case 1:
-        //Ingresar gastos
+        //Ingresar gasto
         $controladora->IngresarGasto($_REQUEST['costo'],$_REQUEST['descripcion'],$_REQUEST['nit'],$_REQUEST['numerofactura'],$_REQUEST['nombreempresa']);
         break;
      case 2:
@@ -292,12 +280,11 @@ switch($_REQUEST['funcion']){
         $controladora->RegistrarIngresoProducto($_REQUEST['producto'],$_REQUEST['cantidad']);
         break;
     case 11:
-<<<<<<< HEAD
         //consultar inventario
         $controladora->ConsultarInventario($_REQUEST['tipo'],$_REQUEST['sede']);
-=======
+        break;
+    case 12:
         $controladora->ActualizarTablaInventario($_REQUEST['sede']);
->>>>>>> origin/master
         break;
 }
 

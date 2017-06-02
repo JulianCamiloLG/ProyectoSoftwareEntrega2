@@ -1,5 +1,5 @@
 //Guardar los datos ingresados a la tabla inventario
-/*$('#GuardarInventario').button().on("click", function(event){
+$('#GuardarInventario').button().on("click", function(event){
     sedeInventario=$('#sedeInventario').val();
     //Empanadas de carne
     inicioECarne=$('#txtInicioECarne').val();
@@ -197,7 +197,7 @@
         }else{
             alert("Campo con dato no numerico o menor o igual a cero(0)");
         }
-})*/
+})
 
 $("#consultarInventarioTotal").button().on("click",function(event){
     $.post("../Controller/controladora.php",{tipo:"total",sede:"",funcion:11},function(respuesta){
@@ -254,7 +254,7 @@ $("#consultarInventarioSede").button().on("click",function(event){
 })
 $('#IniciarInventario').button().on("click",function(){
     sedeInventario=$('#sedeInventario').val();
-    $.post("../Controller/controladora.php",{sede:sedeInventario,funcion:11},function(respuesta){
+    $.post("../Controller/controladora.php",{sede:sedeInventario,funcion:12},function(respuesta){
         if (respuesta.length>20){
         var datos= jQuery.parseJSON(respuesta);
                 if(datos[0].producto==="EmpaCarne"){
