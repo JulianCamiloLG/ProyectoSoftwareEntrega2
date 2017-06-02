@@ -15,7 +15,7 @@ class IngresarProducto
     {
         $BDD=new BaseDeDatos();
         $temp=$BDD->ConectarBDD();
-        $Sql="update producto set cantidadMinima = cantidadMinima + $this->cantidad where lower("nombreP") = lower('$this->producto')";
+        $Sql="UPDATE producto SET cantidadminima=cantidadminima+$this->cantidad WHERE nombreproducto='$this->producto'";
         $result=pg_exec($Sql);
         if (!$result){
             echo ("Error al ingresar el gasto");
