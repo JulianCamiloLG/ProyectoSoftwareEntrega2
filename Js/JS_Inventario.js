@@ -1,5 +1,5 @@
 //Guardar los datos ingresados a la tabla inventario
-$('#GuardarInventario').button().on("click", function(event){
+/*$('#GuardarInventario').button().on("click", function(event){
     sedeInventario=$('#sedeInventario').val();
     //Empanadas de carne
     inicioECarne=$('#txtInicioECarne').val();
@@ -197,4 +197,58 @@ $('#GuardarInventario').button().on("click", function(event){
         }else{
             alert("Campo con dato no numerico o menor o igual a cero(0)");
         }
+})*/
+
+$("#consultarInventarioTotal").button().on("click",function(event){
+    $.post("../Controller/controladora.php",{tipo:"total",sede:"",funcion:11},function(respuesta){
+        console.log(respuesta);
+        var datos=jQuery.parseJSON(respuesta);
+		for (var i in datos){
+            console.log("i: " + i);
+            var elementotr=document.createElement('tr');
+            // creacion primer td y se lo asigno al padre tr
+            var elementotd=document.createElement('td');
+            elementotr.appendChild(elementotd);
+            var texto=document.createTextNode(datos[i].producto);
+            elementotd.appendChild(texto);
+            elementotd.setAttribute("align","center");
+            // creacion segundo td y se lo asigno al padre tr
+            var elementotd=document.createElement('td');
+            elementotr.appendChild(elementotd);
+            var texto=document.createTextNode(datos[i].total);
+            elementotd.appendChild(texto);
+            elementotd.setAttribute("align","center");
+            var elementotd=document.createElement('td');
+            elementotr.appendChild(elementotd);
+            var obj=document.getElementById('Contenido');
+            obj.appendChild(elementotr);
+        }
+    })
+})
+
+$("#consultarInventarioSede").button().on("click",function(event){
+    $.post("../Controller/controladora.php",{tipo:"sede",sede: $("#sede").val(),funcion:11},function(respuesta){
+        console.log(respuesta);
+        var datos=jQuery.parseJSON(respuesta);
+		for (var i in datos){
+            console.log("i: " + i);
+            var elementotr=document.createElement('tr');
+            // creacion primer td y se lo asigno al padre tr
+            var elementotd=document.createElement('td');
+            elementotr.appendChild(elementotd);
+            var texto=document.createTextNode(datos[i].producto);
+            elementotd.appendChild(texto);
+            elementotd.setAttribute("align","center");
+            // creacion segundo td y se lo asigno al padre tr
+            var elementotd=document.createElement('td');
+            elementotr.appendChild(elementotd);
+            var texto=document.createTextNode(datos[i].total);
+            elementotd.appendChild(texto);
+            elementotd.setAttribute("align","center");
+            var elementotd=document.createElement('td');
+            elementotr.appendChild(elementotd);
+            var obj=document.getElementById('Contenido');
+            obj.appendChild(elementotr);
+        }
+    })
 })

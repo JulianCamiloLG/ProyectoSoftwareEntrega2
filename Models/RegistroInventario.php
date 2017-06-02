@@ -33,5 +33,21 @@ class RegistroInventario{
         }
         //echo json_encode("Inventario registrado con exito");
     }
+
+    public function ConsultarInventarioTotal(){
+        $BDD=new BaseDeDatos();
+        $temp=$BDD->ConectarBDD();
+        $Sql="select producto, sum(inicio)+sum(entra)-sum(devol) from inventarioturno group by producto order by 1;";
+        $Registros=pg_exec($Sql);
+		return($Registros);
+    }
+
+    public function consultarInventarioSede(){
+        $BDD=new BaseDeDatos();
+        $temp=$BDD->ConectarBDD();
+        $Sql="select producto, sum(inicio)+sum(entra)-sum(devol) from inventarioturno where sede='$this->sede' group by producto order by 1;";
+        $result = pg_exec($Sql);
+        return($result);
+    }
 }
 ?>
