@@ -202,85 +202,85 @@ $('#IniciarInventario').button().on("click",function(){
     $.post("../Controller/controladora.php",{funcion:11},function(respuesta){
         var datos= jQuery.parseJSON(respuesta);
                 if(datos[0].producto==="EmpaCarne"){
-                    console.log(datos[0].producto);
+                    $("#txtInicioECarne").val(datos[0].total);
                 }
                 if(datos[1].producto==="EmpaPollo"){
-                    console.log(datos[1].producto);
+                    $("#txtInicioEPollo").val(datos[1].total);
                 }
                 if(datos[2].producto==="EmpaChicharron"){
-                    console.log(datos[2].producto);
+                    $("#txtInicioEChicharron").val(datos[2].total);
                 }
                 if(datos[3].producto==="EmpaQueso"){
-                    console.log(datos[3].producto);
+                    $("#txtInicioEQueso").val(datos[3].total);
                 }
                 if(datos[4].producto==="EmpaChampinones"){
-                    console.log(datos[4].producto);
+                    $("#txtInicioEChampinones").val(datos[4].total);
                 }
                 if(datos[5].producto==="Gaseosa250"){
-                    console.log(datos[5].producto);
+                    $("#txtInicioGaseosa250").val(datos[5].total);
                 }
                 if(datos[6].producto==="Gaseosa350"){
-                    console.log(datos[6].producto);
+                    $("#txtInicioGaseosa350").val(datos[6].total);
                 }
                 if(datos[7].producto==="JugoHit250"){
-                    console.log(datos[7].producto);
+                    $("#txtInicioJugoHit250").val(datos[7].total);
                 }
                 if(datos[8].producto==="JugoHit500"){
-                    console.log(datos[8].producto);
+                    $("#txtInicioJugoHit500").val(datos[8].total);
                 }
                 if(datos[9].producto==="H2O"){
-                    console.log(datos[9].producto);
+                    $("#txtInicioH2O").val(datos[9].total);
                 }
                 if(datos[10].producto==="Gaseosa2lt"){
-                    console.log(datos[10].producto);
+                    $("#txtInicioGaseosa2LT").val(datos[10].total);
                 }
                 if(datos[11].producto==="FuzeTea"){
-                    console.log(datos[11].producto);
+                    $("#txtInicioFuzetea").val(datos[11].total);
                 }
                 if(datos[12].producto==="FlexiPequena"){
-                    console.log(datos[12].producto);
+                    $("#txtInicioFlexipequena").val(datos[12].total);
                 }
                 if(datos[13].producto==="PonyPet"){
-                    console.log(datos[13].producto);
+                    $("#txtInicioPonypet").val(datos[13].total);
                 }
                 if(datos[14].producto==="PonyMini"){
-                    console.log(datos[14].producto);
+                    $("#txtInicioPonymini").val(datos[14].total);
                 }
                 if(datos[15].producto==="Agua"){
-                    console.log(datos[15].producto);
+                    $("#txtInicioAgua").val(datos[15].total);
                 }
                 if(datos[16].producto==="Chiclets"){
-                    console.log(datos[16].producto);
+                    $("#txtInicioChiclets").val(datos[16].total);
                 }
                 if(datos[17].producto==="Leche"){
-                    console.log(datos[17].producto);
+                    $("#txtInicioLeche").val(datos[17].total);
                 }
                 if(datos[18].producto==="Pulpas"){
-                    console.log(datos[18].producto);
+                    $("#txtInicioPulpas").val(datos[18].total);
                 }
                 if(datos[19].producto==="Avena"){
-                    console.log(datos[19].producto);
+                    $("#txtInicioAvena").val(datos[19].total);
                 }
                 if(datos[20].producto==="MiloCaliente"){
-                    console.log(datos[20].producto);
+                    $("#txtInicioMilocaliente").val(datos[20].total);
                 }
                 if(datos[21].producto==="Pintado"){
-                    console.log(datos[21].producto);
+                    $("#txtInicioPintado").val(datos[21].total);
                 }
                 if(datos[22].producto==="Pintadito"){
-                    console.log(datos[22].producto);
+                    $("#txtInicioPintadito").val(datos[22].total);
                 }
                 if(datos[23].producto==="CapuccinoOriginal"){
-                    console.log(datos[23].producto);
+                    $("#txtInicioCapuccinooriginal").val(datos[23].total);
                 }
                 if(datos[24].producto==="CapuccinoVainilla"){
-                    console.log(datos[24].producto);
+                    $("#txtInicioCapuccinoVainilla").val(datos[24].total);
                 }
                 if(datos[25].producto==="Tinto"){
-                    console.log(datos[25].producto);
+                    $("#txtInicioTinto").val(datos[25].total);
                 }
                 if(datos[26].producto==="Mokaccino"){
-                    console.log(datos[26].producto);
+                    $("#txtInicioMokaccino").val(datos[26].total);
                 }
 
     })

@@ -97,8 +97,9 @@ class controladora{
 		echo json_encode($vec);
         }
     }
-    public function RegistrarInventario($cajero,$producto,$sede,$inicio,$entra,$devol,$saldo,$venta){
+    public function RegistrarInventario($cajero,$producto,$sede,$inicio,$entra,$devol,$venta){
         $total=($inicio+$entra)-$devol;
+        $saldo=$total-$venta;
         $ECarne=new RegistroInventario($producto,$inicio,$entra,$devol,$total,$saldo,$venta,$cajero,$sede);
         $ECarne->IngresarInventario();
     }
@@ -179,59 +180,59 @@ switch($_REQUEST['funcion']){
 		$cajero=$_SESSION['usuario'];
         //Registrar inventario para cada producto
         //Empanadas de carne
-        $controladora->RegistrarInventario($cajero,'EmpaCarne',$_REQUEST['sedeInventario'],$_REQUEST['inicioECarne'],$_REQUEST['entraECarne'],$_REQUEST['devolECarne'],$_REQUEST['saldoECarne'],$_REQUEST['ventaECarne']);
+        $controladora->RegistrarInventario($cajero,'EmpaCarne',$_REQUEST['sedeInventario'],$_REQUEST['inicioECarne'],$_REQUEST['entraECarne'],$_REQUEST['devolECarne'],$_REQUEST['ventaECarne']);
         //Empanadas de pollo
-        $controladora->RegistrarInventario($cajero,'EmpaPollo',$_REQUEST['sedeInventario'],$_REQUEST['inicioEPollo'],$_REQUEST['entraEPollo'],$_REQUEST['devolEPollo'],$_REQUEST['saldoEPollo'],$_REQUEST['ventaEPollo']);
+        $controladora->RegistrarInventario($cajero,'EmpaPollo',$_REQUEST['sedeInventario'],$_REQUEST['inicioEPollo'],$_REQUEST['entraEPollo'],$_REQUEST['devolEPollo'],$_REQUEST['ventaEPollo']);
         //Empanadas de chicharron
-        $controladora->RegistrarInventario($cajero,'EmpaChicharron',$_REQUEST['sedeInventario'],$_REQUEST['inicioEChicharron'],$_REQUEST['entraEChicharron'],$_REQUEST['devolEChicharron'],$_REQUEST['saldoEChicharron'],$_REQUEST['ventaEChicharron']);
+        $controladora->RegistrarInventario($cajero,'EmpaChicharron',$_REQUEST['sedeInventario'],$_REQUEST['inicioEChicharron'],$_REQUEST['entraEChicharron'],$_REQUEST['devolEChicharron'],$_REQUEST['ventaEChicharron']);
         //Empanadas de queso
-        $controladora->RegistrarInventario($cajero,'EmpaQueso',$_REQUEST['sedeInventario'],$_REQUEST['inicioEQueso'],$_REQUEST['entraEQueso'],$_REQUEST['devolEQueso'],$_REQUEST['saldoEQueso'],$_REQUEST['ventaEQueso']);
+        $controladora->RegistrarInventario($cajero,'EmpaQueso',$_REQUEST['sedeInventario'],$_REQUEST['inicioEQueso'],$_REQUEST['entraEQueso'],$_REQUEST['devolEQueso'],$_REQUEST['ventaEQueso']);
         //Empanadas de champiñones
-        $controladora->RegistrarInventario($cajero,'EmpaChampinones',$_REQUEST['sedeInventario'],$_REQUEST['inicioEChampinones'],$_REQUEST['entraEChampinones'],$_REQUEST['devolEChampinones'],$_REQUEST['saldoEChampinones'],$_REQUEST['ventaEChampinones']);
+        $controladora->RegistrarInventario($cajero,'EmpaChampinones',$_REQUEST['sedeInventario'],$_REQUEST['inicioEChampinones'],$_REQUEST['entraEChampinones'],$_REQUEST['devolEChampinones'],$_REQUEST['ventaEChampinones']);
         //Gaseosa 250
-        $controladora->RegistrarInventario($cajero,'Gaseosa250',$_REQUEST['sedeInventario'],$_REQUEST['inicioGaseosa250'],$_REQUEST['entraGaseosa250'],$_REQUEST['devolGaseosa250'],$_REQUEST['saldoGaseosa250'],$_REQUEST['ventaGaseosa250']);
+        $controladora->RegistrarInventario($cajero,'Gaseosa250',$_REQUEST['sedeInventario'],$_REQUEST['inicioGaseosa250'],$_REQUEST['entraGaseosa250'],$_REQUEST['devolGaseosa250'],$_REQUEST['ventaGaseosa250']);
         //Gaseosa 350
-        $controladora->RegistrarInventario($cajero,'Gaseosa350',$_REQUEST['sedeInventario'],$_REQUEST['inicioGaseosa350'],$_REQUEST['entraGaseosa350'],$_REQUEST['devolGaseosa350'],$_REQUEST['saldoGaseosa350'],$_REQUEST['ventaGaseosa350']);
+        $controladora->RegistrarInventario($cajero,'Gaseosa350',$_REQUEST['sedeInventario'],$_REQUEST['inicioGaseosa350'],$_REQUEST['entraGaseosa350'],$_REQUEST['devolGaseosa350'],$_REQUEST['ventaGaseosa350']);
         //Jugo hit 250
-        $controladora->RegistrarInventario($cajero,'JugoHit250',$_REQUEST['sedeInventario'],$_REQUEST['inicioJugoHit250'],$_REQUEST['entraJugoHit250'],$_REQUEST['devolJugoHit250'],$_REQUEST['saldoJugoHit250'],$_REQUEST['ventaJugoHit250']);
+        $controladora->RegistrarInventario($cajero,'JugoHit250',$_REQUEST['sedeInventario'],$_REQUEST['inicioJugoHit250'],$_REQUEST['entraJugoHit250'],$_REQUEST['devolJugoHit250'],$_REQUEST['ventaJugoHit250']);
         //Jugo Hit 500
-        $controladora->RegistrarInventario($cajero,'JugoHit500',$_REQUEST['sedeInventario'],$_REQUEST['inicioJugoHit500'],$_REQUEST['entraJugoHit500'],$_REQUEST['devolJugoHit500'],$_REQUEST['saldoJugoHit500'],$_REQUEST['ventaJugoHit500']);
+        $controladora->RegistrarInventario($cajero,'JugoHit500',$_REQUEST['sedeInventario'],$_REQUEST['inicioJugoHit500'],$_REQUEST['entraJugoHit500'],$_REQUEST['devolJugoHit500'],$_REQUEST['ventaJugoHit500']);
         //H2O
-        $controladora->RegistrarInventario($cajero,'H2O',$_REQUEST['sedeInventario'],$_REQUEST['inicioH2O'],$_REQUEST['entraH2O'],$_REQUEST['devolH2O'],$_REQUEST['saldoH2O'],$_REQUEST['ventaH2O']);
+        $controladora->RegistrarInventario($cajero,'H2O',$_REQUEST['sedeInventario'],$_REQUEST['inicioH2O'],$_REQUEST['entraH2O'],$_REQUEST['devolH2O'],$_REQUEST['ventaH2O']);
         //Gaseosa2LT
-        $controladora->RegistrarInventario($cajero,'Gaseosa2lt',$_REQUEST['sedeInventario'],$_REQUEST['inicioGaseosa2LT'],$_REQUEST['entraGaseosa2LT'],$_REQUEST['devolGaseosa2LT'],$_REQUEST['saldoGaseosa2LT'],$_REQUEST['ventaGaseosa2LT']);
+        $controladora->RegistrarInventario($cajero,'Gaseosa2lt',$_REQUEST['sedeInventario'],$_REQUEST['inicioGaseosa2LT'],$_REQUEST['entraGaseosa2LT'],$_REQUEST['devolGaseosa2LT'],$_REQUEST['ventaGaseosa2LT']);
         //Fuze Tea
-        $controladora->RegistrarInventario($cajero,'FuzeTea',$_REQUEST['sedeInventario'],$_REQUEST['inicioFuzetea'],$_REQUEST['entraFuzetea'],$_REQUEST['devolFuzetea'],$_REQUEST['saldoFuzetea'],$_REQUEST['ventaFuzetea']);
+        $controladora->RegistrarInventario($cajero,'FuzeTea',$_REQUEST['sedeInventario'],$_REQUEST['inicioFuzetea'],$_REQUEST['entraFuzetea'],$_REQUEST['devolFuzetea'],$_REQUEST['ventaFuzetea']);
         //Flexi Pequeña
-        $controladora->RegistrarInventario($cajero,'FlexiPequena',$_REQUEST['sedeInventario'],$_REQUEST['inicioFlexipequena'],$_REQUEST['entraFlexipequena'],$_REQUEST['devolFlexipequena'],$_REQUEST['saldoFlexipequena'],$_REQUEST['ventaFlexipequena']);
+        $controladora->RegistrarInventario($cajero,'FlexiPequena',$_REQUEST['sedeInventario'],$_REQUEST['inicioFlexipequena'],$_REQUEST['entraFlexipequena'],$_REQUEST['devolFlexipequena'],$_REQUEST['ventaFlexipequena']);
         //Pony Pet
-        $controladora->RegistrarInventario($cajero,'PonyPet',$_REQUEST['sedeInventario'],$_REQUEST['inicioPonypet'],$_REQUEST['entraPonypet'],$_REQUEST['devolPonypet'],$_REQUEST['saldoPonypet'],$_REQUEST['ventaPonypet']);
+        $controladora->RegistrarInventario($cajero,'PonyPet',$_REQUEST['sedeInventario'],$_REQUEST['inicioPonypet'],$_REQUEST['entraPonypet'],$_REQUEST['devolPonypet'],$_REQUEST['ventaPonypet']);
         //Pony Mini
-        $controladora->RegistrarInventario($cajero,'PonyMini',$_REQUEST['sedeInventario'],$_REQUEST['inicioPonymini'],$_REQUEST['entraPonymini'],$_REQUEST['devolPonymini'],$_REQUEST['saldoPonymini'],$_REQUEST['ventaPonymini']);
+        $controladora->RegistrarInventario($cajero,'PonyMini',$_REQUEST['sedeInventario'],$_REQUEST['inicioPonymini'],$_REQUEST['entraPonymini'],$_REQUEST['devolPonymini'],$_REQUEST['ventaPonymini']);
         //Agua
-        $controladora->RegistrarInventario($cajero,'Agua',$_REQUEST['sedeInventario'],$_REQUEST['inicioAgua'],$_REQUEST['entraAgua'],$_REQUEST['devolAgua'],$_REQUEST['saldoAgua'],$_REQUEST['ventaAgua']);
+        $controladora->RegistrarInventario($cajero,'Agua',$_REQUEST['sedeInventario'],$_REQUEST['inicioAgua'],$_REQUEST['entraAgua'],$_REQUEST['devolAgua'],$_REQUEST['ventaAgua']);
         //Chiclets
-        $controladora->RegistrarInventario($cajero,'Chiclets',$_REQUEST['sedeInventario'],$_REQUEST['inicioChiclets'],$_REQUEST['entraChiclets'],$_REQUEST['devolChiclets'],$_REQUEST['saldoChiclets'],$_REQUEST['ventaChiclets']);
+        $controladora->RegistrarInventario($cajero,'Chiclets',$_REQUEST['sedeInventario'],$_REQUEST['inicioChiclets'],$_REQUEST['entraChiclets'],$_REQUEST['devolChiclets'],$_REQUEST['ventaChiclets']);
         //Leche
-        $controladora->RegistrarInventario($cajero,'Leche',$_REQUEST['sedeInventario'],$_REQUEST['inicioLeche'],$_REQUEST['entraLeche'],$_REQUEST['devolLeche'],$_REQUEST['saldoLeche'],$_REQUEST['ventaLeche']);
+        $controladora->RegistrarInventario($cajero,'Leche',$_REQUEST['sedeInventario'],$_REQUEST['inicioLeche'],$_REQUEST['entraLeche'],$_REQUEST['devolLeche'],$_REQUEST['ventaLeche']);
         //Pulpas
-        $controladora->RegistrarInventario($cajero,'Pulpas',$_REQUEST['sedeInventario'],$_REQUEST['inicioPulpas'],$_REQUEST['entraPulpas'],$_REQUEST['devolPulpas'],$_REQUEST['saldoPulpas'],$_REQUEST['ventaPulpas']);
+        $controladora->RegistrarInventario($cajero,'Pulpas',$_REQUEST['sedeInventario'],$_REQUEST['inicioPulpas'],$_REQUEST['entraPulpas'],$_REQUEST['devolPulpas'],$_REQUEST['ventaPulpas']);
         //Avena
-        $controladora->RegistrarInventario($cajero,'Avena',$_REQUEST['sedeInventario'],$_REQUEST['inicioAvena'],$_REQUEST['entraAvena'],$_REQUEST['devolAvena'],$_REQUEST['saldoAvena'],$_REQUEST['ventaAvena']);
+        $controladora->RegistrarInventario($cajero,'Avena',$_REQUEST['sedeInventario'],$_REQUEST['inicioAvena'],$_REQUEST['entraAvena'],$_REQUEST['devolAvena'],$_REQUEST['ventaAvena']);
         //Milo Caliente
-        $controladora->RegistrarInventario($cajero,'MiloCaliente',$_REQUEST['sedeInventario'],$_REQUEST['inicioMilocaliente'],$_REQUEST['entraMilocaliente'],$_REQUEST['devolMilocaliente'],$_REQUEST['saldoMilocaliente'],$_REQUEST['ventaMilocaliente']);
+        $controladora->RegistrarInventario($cajero,'MiloCaliente',$_REQUEST['sedeInventario'],$_REQUEST['inicioMilocaliente'],$_REQUEST['entraMilocaliente'],$_REQUEST['devolMilocaliente'],$_REQUEST['ventaMilocaliente']);
         //Pintado
-        $controladora->RegistrarInventario($cajero,'Pintado',$_REQUEST['sedeInventario'],$_REQUEST['inicioPintado'],$_REQUEST['entraPintado'],$_REQUEST['devolPintado'],$_REQUEST['saldoPintado'],$_REQUEST['ventaPintado']);
+        $controladora->RegistrarInventario($cajero,'Pintado',$_REQUEST['sedeInventario'],$_REQUEST['inicioPintado'],$_REQUEST['entraPintado'],$_REQUEST['devolPintado'],$_REQUEST['ventaPintado']);
         //Pintadito
-        $controladora->RegistrarInventario($cajero,'Pintadito',$_REQUEST['sedeInventario'],$_REQUEST['inicioPintadito'],$_REQUEST['entraPintadito'],$_REQUEST['devolPintadito'],$_REQUEST['saldoPintadito'],$_REQUEST['ventaPintadito']);
+        $controladora->RegistrarInventario($cajero,'Pintadito',$_REQUEST['sedeInventario'],$_REQUEST['inicioPintadito'],$_REQUEST['entraPintadito'],$_REQUEST['devolPintadito'],$_REQUEST['ventaPintadito']);
         //Capuccino Original
-        $controladora->RegistrarInventario($cajero,'CapuccinoOriginal',$_REQUEST['sedeInventario'],$_REQUEST['inicioCapuccinooriginal'],$_REQUEST['entraCapuccinooriginal'],$_REQUEST['devolCapuccinooriginal'],$_REQUEST['saldoCapuccinooriginal'],$_REQUEST['ventaCapuccinooriginal']);
+        $controladora->RegistrarInventario($cajero,'CapuccinoOriginal',$_REQUEST['sedeInventario'],$_REQUEST['inicioCapuccinooriginal'],$_REQUEST['entraCapuccinooriginal'],$_REQUEST['devolCapuccinooriginal'],$_REQUEST['ventaCapuccinooriginal']);
         //Capuccino Vainilla
-        $controladora->RegistrarInventario($cajero,'CapuccinoVainilla',$_REQUEST['sedeInventario'],$_REQUEST['inicioCapuccinoVainilla'],$_REQUEST['entraCapuccinoVainilla'],$_REQUEST['devolCapuccinoVainilla'],$_REQUEST['saldoCapuccinoVainilla'],$_REQUEST['ventaCapuccinoVainilla']);
+        $controladora->RegistrarInventario($cajero,'CapuccinoVainilla',$_REQUEST['sedeInventario'],$_REQUEST['inicioCapuccinoVainilla'],$_REQUEST['entraCapuccinoVainilla'],$_REQUEST['devolCapuccinoVainilla'],$_REQUEST['ventaCapuccinoVainilla']);
         //Tinto
-        $controladora->RegistrarInventario($cajero,'Tinto',$_REQUEST['sedeInventario'],$_REQUEST['inicioTinto'],$_REQUEST['entraTinto'],$_REQUEST['devolTinto'],$_REQUEST['saldoTinto'],$_REQUEST['ventaTinto']);
+        $controladora->RegistrarInventario($cajero,'Tinto',$_REQUEST['sedeInventario'],$_REQUEST['inicioTinto'],$_REQUEST['entraTinto'],$_REQUEST['devolTinto'],$_REQUEST['ventaTinto']);
         //Mokaccino
-        $controladora->RegistrarInventario($cajero,'Mokaccino',$_REQUEST['sedeInventario'],$_REQUEST['inicioMokaccino'],$_REQUEST['entraMokaccino'],$_REQUEST['devolMokaccino'],$_REQUEST['saldoMokaccino'],$_REQUEST['ventaMokaccino']);
+        $controladora->RegistrarInventario($cajero,'Mokaccino',$_REQUEST['sedeInventario'],$_REQUEST['inicioMokaccino'],$_REQUEST['entraMokaccino'],$_REQUEST['devolMokaccino'],$_REQUEST['ventaMokaccino']);
         break;
     case 7:
         $controladora->TotalProduccion($_REQUEST['datos']);
