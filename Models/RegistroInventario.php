@@ -43,7 +43,9 @@ class RegistroInventario{
                             select MAX(turno)
                             from inventarioturno)
                      and lower(sede)='$this->sede';";
+        $Sql2="delete from producto;";
         $Registros=pg_exec($Sql);
+        $reiniciar=pg_exec($Sql2);
 		return($Registros);
     }
 
