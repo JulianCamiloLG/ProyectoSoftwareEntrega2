@@ -26,12 +26,25 @@ class RegistroInventario{
     public function IngresarInventario(){
         $BDD=new BaseDeDatos();
         $temp=$BDD->ConectarBDD();
-        $Sql="insert into inventarioturno values('$this->producto',$this->inicio,$this->entra,$this->devol,$this->total,$this->saldo,$this->venta,'$this->cajero','$this->sede',to_char(current_timestamp, 'HH24:MI:SS'));";
+        $Sql="insert into inventarioturno values('$this->producto',$this->inicio,$this->entra,$this->devol,$this->total,$this->saldo,$this->venta,'$this->cajero','$this->sede',current_timestamp(2));";
         $result=pg_exec($Sql);
         if (!$result){
             echo ("Error al ingresar el inventario");
         }
-        //echo json_encode("Inventario registrado con exito");
+        echo("Inventario registrado con exito");
+    }
+    //Consultar inventario turno anterior al actual
+    public function ActualizarTemporalInventario(){
+        $BDD=new BaseDeDatos();
+        $temp=$BDD->ConectarBDD();
+        $Sql="select producto,total
+              from inventarioturno
+              where turno in(
+                            select MAX(turno)
+                            from inventarioturno)
+                     and lower(sede)='$this->sede';";
+        $Registros=pg_exec($Sql);
+		return($Registros);
     }
 
     public function ConsultarInventarioTotal(){

@@ -252,3 +252,95 @@ $("#consultarInventarioSede").button().on("click",function(event){
         }
     })
 })
+$('#IniciarInventario').button().on("click",function(){
+    sedeInventario=$('#sedeInventario').val();
+    $.post("../Controller/controladora.php",{sede:sedeInventario,funcion:11},function(respuesta){
+        if (respuesta.length>20){
+        var datos= jQuery.parseJSON(respuesta);
+                if(datos[0].producto==="EmpaCarne"){
+                    $("#txtInicioECarne").val(datos[0].total);
+                }
+                if(datos[1].producto==="EmpaPollo"){
+                    $("#txtInicioEPollo").val(datos[1].total);
+                }
+                if(datos[2].producto==="EmpaChicharron"){
+                    $("#txtInicioEChicharron").val(datos[2].total);
+                }
+                if(datos[3].producto==="EmpaQueso"){
+                    $("#txtInicioEQueso").val(datos[3].total);
+                }
+                if(datos[4].producto==="EmpaChampinones"){
+                    $("#txtInicioEChampinones").val(datos[4].total);
+                }
+                if(datos[5].producto==="Gaseosa250"){
+                    $("#txtInicioGaseosa250").val(datos[5].total);
+                }
+                if(datos[6].producto==="Gaseosa350"){
+                    $("#txtInicioGaseosa350").val(datos[6].total);
+                }
+                if(datos[7].producto==="JugoHit250"){
+                    $("#txtInicioJugoHit250").val(datos[7].total);
+                }
+                if(datos[8].producto==="JugoHit500"){
+                    $("#txtInicioJugoHit500").val(datos[8].total);
+                }
+                if(datos[9].producto==="H2O"){
+                    $("#txtInicioH2O").val(datos[9].total);
+                }
+                if(datos[10].producto==="Gaseosa2lt"){
+                    $("#txtInicioGaseosa2LT").val(datos[10].total);
+                }
+                if(datos[11].producto==="FuzeTea"){
+                    $("#txtInicioFuzetea").val(datos[11].total);
+                }
+                if(datos[12].producto==="FlexiPequena"){
+                    $("#txtInicioFlexipequena").val(datos[12].total);
+                }
+                if(datos[13].producto==="PonyPet"){
+                    $("#txtInicioPonypet").val(datos[13].total);
+                }
+                if(datos[14].producto==="PonyMini"){
+                    $("#txtInicioPonymini").val(datos[14].total);
+                }
+                if(datos[15].producto==="Agua"){
+                    $("#txtInicioAgua").val(datos[15].total);
+                }
+                if(datos[16].producto==="Chiclets"){
+                    $("#txtInicioChiclets").val(datos[16].total);
+                }
+                if(datos[17].producto==="Leche"){
+                    $("#txtInicioLeche").val(datos[17].total);
+                }
+                if(datos[18].producto==="Pulpas"){
+                    $("#txtInicioPulpas").val(datos[18].total);
+                }
+                if(datos[19].producto==="Avena"){
+                    $("#txtInicioAvena").val(datos[19].total);
+                }
+                if(datos[20].producto==="MiloCaliente"){
+                    $("#txtInicioMilocaliente").val(datos[20].total);
+                }
+                if(datos[21].producto==="Pintado"){
+                    $("#txtInicioPintado").val(datos[21].total);
+                }
+                if(datos[22].producto==="Pintadito"){
+                    $("#txtInicioPintadito").val(datos[22].total);
+                }
+                if(datos[23].producto==="CapuccinoOriginal"){
+                    $("#txtInicioCapuccinooriginal").val(datos[23].total);
+                }
+                if(datos[24].producto==="CapuccinoVainilla"){
+                    $("#txtInicioCapuccinoVainilla").val(datos[24].total);
+                }
+                if(datos[25].producto==="Tinto"){
+                    $("#txtInicioTinto").val(datos[25].total);
+                }
+                if(datos[26].producto==="Mokaccino"){
+                    $("#txtInicioMokaccino").val(datos[26].total);
+                }
+            }else{
+                alert("No existen registros");
+            }
+
+    })
+})
