@@ -161,7 +161,7 @@ class controladora{
 $controladora=new controladora();
 switch($_REQUEST['funcion']){
     case 1:
-        //Ingresar gastos
+        //Ingresar gasto
         $controladora->IngresarGasto($_REQUEST['costo'],$_REQUEST['descripcion'],$_REQUEST['nit'],$_REQUEST['numerofactura'],$_REQUEST['nombreempresa']);
         break;
      case 2:
