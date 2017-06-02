@@ -42,14 +42,6 @@
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Funciones<span class="caret"></span></a>
 								<dd class="dropdown-menu" role="menu">
 									<li><a href="CU-Total-Produccion-Producto.html" target="iframeVistas">Total de produccion por porducto</a></li>
-									<li class="divider"></li>
-									<li><a href="###" target="iframeVistas">###</a></li>
-									<li class="divider"></li>
-									<li><a href="###" target="iframeVistas">###</a></li>
-									<li class="divider"></li>
-									<li><a href="###" target="iframeVistas">###</a></li>
-									<li class="divider"></li>
-									<li><a href="###" target="iframeVistas">###</a></li>
 								</dd>
 							</li>
 						</dd>
