@@ -7,6 +7,13 @@ include_once("../Models/RegistroInventario.php");
 include_once("../Models/usuario.php");
 include_once("../Models/ProduccionTotal.php");
 include_once("../Models/IngresarProducto.php");
+<<<<<<< HEAD
+
+
+include_once("../Models/BaseDeDatos.php");
+
+=======
+>>>>>>> origin/master
 
 class controladora{
     public function IngresarGasto($valor,$descripcion,$nit,$numerofactura,$nombreempresa){
@@ -97,7 +104,40 @@ class controladora{
 		echo json_encode($vec);
         }
     }
+<<<<<<< HEAD
+
+    public function ConsultarInventario($tipo,$sede){
+        //echo ($tipo);
+        if($tipo=="total"){
+            $consulta=new RegistroInventario("","","","",""."","","","");
+            $Registros=$consulta->ConsultarInventarioTotal();
+            $Filas=pg_num_rows($Registros);
+            for($cont=0;$cont<$Filas;$cont++){
+                $vec=array("producto"=>"".pg_result($Registros,$cont,0),
+					   "total"=>"".pg_result($Registros,$cont,1),);
+                $M[$cont]=$vec;
+            }
+		$vec=$M;
+		echo json_encode($vec);
+
+        }elseif($tipo=="sede"){
+            $consulta=new RegistroInventario("","","","","","","","",$sede);
+            $Registros=$consulta->ConsultarInventarioSede();
+            $Filas=pg_num_rows($Registros);
+            for($cont=0;$cont<$Filas;$cont++){
+                $vec=array("producto"=>"".pg_result($Registros,$cont,0),
+					   "total"=>"".pg_result($Registros,$cont,1),);
+                $M[$cont]=$vec;
+            }
+		$vec=$M;
+		echo json_encode($vec);
+        }
+    }
+
+    public function RegistrarInventario($cajero,$producto,$sede,$inicio,$entra,$devol,$saldo,$venta){
+=======
     public function RegistrarInventario($cajero,$producto,$sede,$inicio,$entra,$devol,$venta){
+>>>>>>> origin/master
         $total=($inicio+$entra)-$devol;
         $saldo=$total-$venta;
         $ECarne=new RegistroInventario($producto,$inicio,$entra,$devol,$total,$saldo,$venta,$cajero,$sede);
@@ -252,7 +292,12 @@ switch($_REQUEST['funcion']){
         $controladora->RegistrarIngresoProducto($_REQUEST['producto'],$_REQUEST['cantidad']);
         break;
     case 11:
+<<<<<<< HEAD
+        //consultar inventario
+        $controladora->ConsultarInventario($_REQUEST['tipo'],$_REQUEST['sede']);
+=======
         $controladora->ActualizarTablaInventario($_REQUEST['sede']);
+>>>>>>> origin/master
         break;
 }
 
