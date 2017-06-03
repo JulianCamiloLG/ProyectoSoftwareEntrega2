@@ -52,6 +52,10 @@
 									<li><a href="Registrar-Empleado.html" target="iframeVistas">Registrar empleado</a></li>
 									<li class="divider"></li>
 									<li><a href="Consultar-Empleado.html" target="iframeVistas">Consolidado de empleados</a></li>
+                                    <li class="divider"></li>
+									<li><a href="CU-Consultar-Inventario-sede.html" target="iframeVistas">Consultar Inventario por Sede</a></li>
+                                    <li class="divider"></li>
+									<li><a href="CU-Consultar-Inventario-Total.html" target="iframeVistas">Consultar Inventario Total</a></li>
 								</dd>
 							</li>
 						</dd>
