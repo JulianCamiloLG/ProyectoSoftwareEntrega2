@@ -5,7 +5,7 @@ class ProduccionTotal{
     var $Pollo;
     var $Chicharron;
     var $Queso;
-    var $Champiñones;
+    var $Champinones;
     public function __construct($datos){
         extract($datos);
         $this->Carne=$Carne;
