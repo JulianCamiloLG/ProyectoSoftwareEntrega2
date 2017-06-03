@@ -43,14 +43,20 @@ class RegistroInventario{
                             select MAX(turno)
                             from inventarioturno)
                      and lower(sede)='$this->sede';";
+        $Sql2="delete from producto;";
         $Registros=pg_exec($Sql);
+        $reiniciar=pg_exec($Sql2);
 		return($Registros);
     }
 
     public function ConsultarInventarioTotal(){
         $BDD=new BaseDeDatos();
         $temp=$BDD->ConectarBDD();
-        $Sql="select producto, sum(inicio)+sum(entra)-sum(devol) from inventarioturno group by producto order by 1;";
+        $Sql="select producto,total
+              from inventarioturno
+              where turno in(
+                            select MAX(turno)
+                            from inventarioturno);";
         $Registros=pg_exec($Sql);
 		return($Registros);
     }
@@ -58,7 +64,12 @@ class RegistroInventario{
     public function consultarInventarioSede(){
         $BDD=new BaseDeDatos();
         $temp=$BDD->ConectarBDD();
-        $Sql="select producto, sum(inicio)+sum(entra)-sum(devol) from inventarioturno where sede='$this->sede' group by producto order by 1;";
+        $Sql="select producto,total
+              from inventarioturno
+              where turno in(
+                            select MAX(turno)
+                            from inventarioturno)
+                     and lower(sede)='$this->sede';";
         $result = pg_exec($Sql);
         return($result);
     }
